@@ -1,0 +1,598 @@
+ @charset "utf-8";
+
+ html,
+ body,
+ div,
+ span,
+ iframe,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ blockquote,
+ pre,
+ a,
+ em,
+ img,
+ small,
+ strong,
+ b,
+ dl,
+ dt,
+ dd,
+ ol,
+ ul,
+ li,
+ fieldset,
+ form,
+ label,
+ legend,
+ table,
+ caption,
+ tr,
+ th,
+ td,
+ article,
+ aside,
+ footer,
+ header,
+ nav,
+ section,
+ summary,
+ video,
+ * {
+     padding: 0;
+     margin: 0;
+ }
+
+ ul,
+ ol {
+     list-style: none;
+ }
+
+ a {
+     color: inherit;
+     text-decoration: none;
+ }
+
+ body {
+     font-family: Pretendard;
+     font-size: 14px;
+     line-height: 1.5;
+     color: #333;
+ }
+
+ html {
+     scroll-behavior: smooth;
+ }
+
+ #wrap {
+     min-width: 1360px;
+ }
+
+ /* --------------------Header------------------------ */
+ #header {
+     width: 100%;
+     height: 90px;
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 1000;
+     transition: background 0.3s;
+     /* 부드러운 변화 */
+     background-color: #fff;
+ }
+
+ .inner_header {
+     width: 1320px;
+     height: 90px;
+     margin: 0 auto;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ /* logo */
+ .logo {
+     padding-top: 10px;
+ }
+
+ /* gnb */
+ .gnb {
+     display: flex;
+ }
+
+ .gnb li a {
+     display: block;
+     font-size: 18px;
+     font-weight: 600;
+     margin: 0 30px;
+     padding: 6px 6px 10px 6px;
+
+     position: relative;
+ }
+
+ .gnb li a::after {
+     content: '';
+     width: 0;
+     /* 처음에는 너비가 0 */
+     height: 4px;
+     background-color: #EE6E29;
+     border-radius: 5px;
+
+     position: absolute;
+     bottom: 0;
+     left: 0;
+
+     transition: width 0.1s ease;
+ }
+
+ .gnb li a:hover,
+ .gnb li a.active {
+     color: #EF6E2A;
+ }
+
+ .gnb a:hover::after,
+ .gnb a.active::after {
+     width: 100%;
+     /* 너비를 100%로 확장 */
+ }
+
+
+ /* util */
+ .util {
+     display: flex;
+     gap: 15px;
+ }
+
+ .util li a {
+     display: block;
+ }
+
+ /*uitl-tooltip 적용 */
+ .login,
+ .join {
+     position: relative;
+ }
+
+ .login::after,
+ .join::after {
+     content: attr(data-tooltip);
+     font-size: 12px;
+     position: absolute;
+     bottom: -35px;
+     left: 50%;
+     transform: translateX(-50%);
+     background-color: rgba(0, 0, 0, 0.8);
+     color: white;
+     padding: 5px 10px;
+     border-radius: 0.25rem;
+     white-space: nowrap;
+     opacity: 0;
+     pointer-events: none;
+     transition: opacity 0.2s;
+     z-index: 99;
+ }
+
+ .login:hover::after,
+ .join:hover::after {
+     opacity: 1;
+ }
+
+
+ /* --------------------Banner------------------------ */
+ #banner {
+     margin-top: 90px;
+     height: 400px;
+     color: #fff;
+
+     background-image: url(../images/shop/shop_banner.png);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     filter: opacity(0.9);
+
+     position: relative;
+ }
+
+ .text {
+     text-align: center;
+     padding-top: 140px;
+ }
+
+ .text h1 {
+     font-size: 56px;
+ }
+
+ .text p {
+     font-size: 24px;
+     margin-top: 10px;
+ }
+
+
+
+ /* --------------------- Container --------------------- */
+ .inner {
+     width: 1320px;
+     margin: 50px auto;
+     padding: 20px 0;
+ }
+
+ .section .title {
+     font-size: 32px;
+     font-weight: 600;
+     display: flex;
+     align-items: center;
+     gap: 15px;
+ }
+
+ .section .title span img {
+     display: block;
+     width: 40px;
+ }
+
+ .section .sub_text {
+     font-size: 16px;
+     font-weight: 500;
+     margin-bottom: 30px;
+ }
+
+
+ /* item_list */
+ .item_list {
+     display: flex;
+     margin-bottom: 50px;
+     gap: 20px;
+     overflow: hidden;
+ }
+
+
+ .item_list .imgwrap {
+     display: block;
+     width: 99%;
+     overflow: hidden;
+     border-radius: 15px;
+     background-color: #f9f9f9;
+     border: 1px solid #d9d9d9;
+ }
+
+ .item_list .imgwrap img {
+     display: block;
+     width: 100%;
+     height: auto;
+     display: block;
+
+     transition: transform 0.3s ease-in-out;
+ }
+
+ .item_name {
+     margin-top: 10px;
+     font-size: 20px;
+     font-weight: 500;
+ }
+
+ .item_price {
+     font-size: 22px;
+     font-weight: 700;
+ }
+
+ .item_price .persent {
+     color: #EE6E29;
+     font-size: 18px;
+ }
+
+ .star {
+     font-size: 16px;
+     font-weight: 500;
+ }
+
+
+ .item_list li:hover a img {
+     transform: scale(1.1);
+ }
+
+ /* sub_banner */
+ .sub_banner {
+     height: 400px;
+     background: url(../images/shop/shop_sub_banner1.png) no-repeat center/cover;
+     padding: 20px 0;
+     position: relative;  /* .detail의 기준점 */
+ }
+
+ .detail {
+     display: inline-block;
+     background-color: #d9e7fc;
+     color: #2B4A8F;
+     font-size: 22px;
+     padding: 10px 25px;
+     border: 3px solid #2B4A8F;
+     border-radius: 50px;
+     transition: all 0.5s;
+
+     position: absolute;
+     top: 59%;
+     left: 49%;
+ }
+
+ .detail:hover {
+     background-color: #2B4A8F;
+     color: #fff;
+     transform: translateY(-3px);
+ }
+
+ /* 전체 상품 */
+ .goodstab {
+     display: flex;
+     gap: 20px;
+     margin: 30px 0;
+ }
+
+ .goodstab li a {
+     display: inline-flex;
+     align-items: center;
+     color: #333;
+     border: 1px solid #333;
+     border-radius: 20px;
+     font-family: pretendard;
+     font-size: 20px;
+     font-weight: 600;
+     padding: 5px 30px 5px 50px;
+     text-align: center;
+
+     /* 배경 공통 설정 */
+     background-color: #fff;
+     background-repeat: no-repeat;
+     background-position: 15px 7px;
+     background-size: 23px;
+ }
+
+ .goodstab li a:hover,
+ .goodstab li a.active {
+     color: #fff;
+     border: none;
+     background-color: #EE6E29;
+ }
+
+ .goodstab li:nth-child(1) a {
+     padding-right: 50px;
+ }
+
+ .goodstab li:nth-child(2) a {
+     background-image: url(../images/main/7-shop/tshirts-b.svg);
+ }
+
+ .goodstab li:nth-child(2) a:hover,
+ .goodstab li:nth-child(2) a.active {
+     background-image: url(../images/main/7-shop/tshirts-w.svg);
+ }
+
+ .goodstab li:nth-child(3) a {
+     background-image: url(../images/main/7-shop/Pencil-b.svg)
+ }
+
+ .goodstab li:nth-child(3) a:hover,
+ .goodstab li:nth-child(3) a.active {
+     background-image: url(../images/main/7-shop/Pencil-w.svg);
+ }
+
+ .goodstab li:nth-child(4) a {
+     background-image: url(../images/main/7-shop/Talent-b.svg);
+ }
+
+ .goodstab li:nth-child(4) a:hover,
+ .goodstab li:nth-child(4) a.active {
+     background-image: url(../images/main/7-shop/Talent-w.svg);
+ }
+
+ .filter_wrap{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+ }
+
+ .filter_wrap p{
+    font-size: 18px;
+ }
+
+  .filter_wrap select{
+    padding: 0 10px;
+  }
+
+ .all {
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+     /* 한 줄에 똑같은 너비(1fr)로 5개*/
+     gap: 20px;
+     /* 상품 사이의 간격 (가로, 세로 20px) */
+ }
+
+ .all li {
+     width: 100%;
+     /* li 내부 내용이 삐져나가지 않도록 설정 */
+     margin-top: 20px;
+ }
+
+ .all .imgwrap {
+     position: relative;
+ }
+
+ .all .imgwrap img {
+     width: 100%;
+     display: block;
+ }
+
+ /* 오버레이 */
+ .overlay {
+     position: absolute;
+     inset: 0;
+     background: rgba(0, 0, 0, 0.7);
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+     opacity: 0;
+     transition: opacity 0.4s ease;
+ }
+
+ .overlay span {
+     color: #fff;
+     font-size: 16px;
+     font-weight: 600;
+     letter-spacing: -0.5px;
+
+     transform: translateY(10px);
+     transition: transform 0.4s ease;
+ }
+
+ .imgwrap:hover .overlay {
+     opacity: 1;
+ }
+
+ .imgwrap:hover .overlay span {
+     transform: translateY(0);
+ }
+
+
+ /* --------------------- Footer --------------------- */
+ #footer {
+     height: 350px;
+     background-color: #333;
+ }
+
+ .inner_footer {
+     width: 1320px;
+     height: 350px;
+     margin: 0 auto;
+     padding: 120px 0;
+     box-sizing: border-box;
+     color: #fff;
+     display: flex;
+     justify-content: space-between;
+
+     position: relative;
+ }
+
+ .footerlogo {
+     opacity: 0.9;
+     position: absolute;
+     top: 50px;
+     left: 0;
+ }
+
+ .info li {
+     margin: 10px 0;
+     font-size: 16px;
+     font-weight: 200;
+     opacity: 0.9;
+ }
+
+ .info strong {
+     font-weight: 500;
+ }
+
+ .link li {
+     font-size: 20px;
+     font-weight: 600;
+     margin: 10px 0;
+
+     opacity: 0.9;
+ }
+
+ .link li:hover {
+     color: #EE6E29;
+ }
+
+ .call {
+     width: 350px;
+     height: 50px;
+     background-color: #595858;
+     border-radius: 10px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 30px 20px;
+     box-sizing: border-box;
+     gap: 30px;
+     font-size: 16px;
+ }
+
+ .call strong {
+     font-size: 32px;
+     font-weight: 600;
+ }
+
+ .sns {
+     display: flex;
+     gap: 10px;
+     position: absolute;
+     right: 0;
+     bottom: 100px;
+ }
+
+ .sns li {
+     opacity: 0.8;
+ }
+
+ .sns li:hover {
+     opacity: 1;
+ }
+
+ .copyright {
+     position: absolute;
+     right: 0;
+     bottom: 60px;
+ }
+
+
+ /* ■ ■ ■ ■ ■ TOP 버튼  ■ ■ ■ ■ ■*/
+ .br-top-btn {
+     position: fixed;
+     bottom: 40px;
+     right: 40px;
+     width: 60px;
+     /* 이미지 크기에 맞게 조절 */
+     height: 60px;
+     background: none;
+     border: none;
+     cursor: pointer;
+     z-index: 1000;
+
+     /* 초기 상태: 숨김 */
+     opacity: 0;
+     visibility: hidden;
+     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ }
+
+ /* 스크롤 시 등장 */
+ .br-top-btn.is-visible {
+     opacity: 1;
+     visibility: visible;
+ }
+
+ /* 이미지 기본 설정 */
+ .br-top-btn img {
+     width: 100%;
+     height: auto;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     transition: opacity 0.3s ease;
+ }
+
+
+ /* --- 호버 인터랙션 --- */
+ .br-top-btn:hover {
+     transform: translateY(-10px);
+     /* 위로 살짝 점프 */
+ }
+
+
+ /* 클릭했을 때 살짝 작아지는 피드백 */
+ .br-top-btn:active {
+     transform: scale(0.9);
+ }

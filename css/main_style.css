@@ -1,0 +1,2076 @@
+@charset "utf-8";
+
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+em,
+img,
+small,
+strong,
+b,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tr,
+th,
+td,
+article,
+aside,
+footer,
+header,
+nav,
+section,
+summary,
+video,
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    font-family: Pretendard;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#wrap {
+    min-width: 1360px;
+}
+
+/* --------------------Header------------------------ */
+#header {
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background 0.3s;
+    /* 부드러운 변화 */
+    background-color: #fff;
+}
+
+.inner_header {
+    width: 1320px;
+    height: 90px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+.logo {
+    padding-top: 10px;
+}
+
+/* gnb */
+.gnb {
+    display: flex;
+}
+
+.gnb li a {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 30px;
+    padding: 6px 6px 10px 6px;
+
+    position: relative;
+}
+
+.gnb li a::after {
+    content: '';
+    width: 0;
+    /* 처음에는 너비가 0 */
+    height: 4px;
+    background-color: #EE6E29;
+    border-radius: 5px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    transition: width 0.3s ease;
+}
+
+.gnb li a:hover,
+.gnb li a.active {
+    color: #EF6E2A;
+}
+
+.gnb a:hover::after,
+.gnb a.active::after {
+    width: 100%;
+    /* 너비를 100%로 확장 */
+}
+
+
+/* util */
+.util {
+    display: flex;
+    gap: 15px;
+}
+
+.util li a {
+    display: block;
+}
+
+/*uitl-tooltip 적용 */
+.login,
+.join {
+    position: relative;
+}
+
+.login::after,
+.join::after {
+    content: attr(data-tooltip);
+    font-size: 12px;
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 99;
+}
+
+.login:hover::after,
+.join:hover::after {
+    opacity: 1;
+}
+
+/* --------------------Visual------------------------ */
+#visual {
+    width: 100%;
+    height: 840px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner {
+    margin-top: 90px;
+    width: 300%;
+    display: flex;
+}
+
+.slide {
+    width: 100vw;
+    /* 화면 전체 너비 고정 */
+    height: 840px;
+    flex-shrink: 0;
+    /* 크기가 줄어들지 않도록 방지 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+/* 슬라이드별 배경 */
+.slide1 {
+    background-image: url('../images/main/2-visual/banner01.png');
+}
+
+.slide2 {
+    background-image: url('../images/main/2-visual/banner02.png');
+}
+
+.slide3 {
+    background-image: url('../images/main/2-visual/banner03.png');
+}
+
+
+.typing1 {
+    display: inline-block;
+    font-size: 60px;
+    font-weight: bold;
+    color: #ffffff;
+
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 99;
+}
+
+.typing2 {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffffff;
+
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 99;
+}
+
+/* 커서 공통 스타일 */
+.cursor::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 0.8em;
+    background-color: white;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* 줄 높이 고정 (지워졌을 때 덜컹거림 방지) */
+.typing1,
+.typing2 {
+    min-height: 1.2em;
+}
+
+
+#visual span {
+    /* 불투명박스 */
+    width: 100%;
+    height: 840px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 90px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* --------------------Section------------------------ */
+/* 공통 */
+.inner {
+    width: 1320px;
+    margin: 0 auto;
+    padding-top: 100px;
+    margin-bottom: 150px;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+}
+
+.title-left {
+    text-align: left;
+}
+
+.titletext {
+    font-family: 'Isamanru';
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.subtext {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
+.blue {
+    color: #2b4a8f;
+}
+
+.orange {
+    color: #EE6E29;
+}
+
+
+
+/* 섹션별 꾸미기 */
+/* section 1 - Brand keyword */
+
+.keyword {
+    display: flex;
+    justify-content: space-between;
+}
+
+.keyword h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.keyword li {
+    width: calc(100% / 3 - 20px);
+    height: 476px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 20px;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 300px 30px 30px;
+}
+
+.keyword li:first-child {
+    background: url(../images/main/3-brand/keyword1.png) no-repeat;
+    background-size: cover;
+}
+
+.keyword li:nth-child(2) {
+    background: url(../images/main/3-brand/keyword2.png) no-repeat;
+    background-size: cover;
+}
+
+.keyword li:last-child {
+    background: url(../images/main/3-brand/keyword3.png) no-repeat;
+    background-size: cover;
+}
+
+
+/* Section 2 - Stadium */
+#section2 {
+    background-color: #e3f1fe;
+    height: 900PX;
+    overflow: hidden;
+}
+
+#section2 .inner {
+    position: relative;
+}
+
+#section2 .title {
+    width: 850px;
+
+    transform: translateY(200px);
+    transition: transform 0.6s ease-in-out;
+}
+
+.stadiuminfo {
+    width: 740px;
+    background-color: #fff;
+    border: 1px solid #D9D9D9;
+    border-radius: 36px;
+    margin-top: 120px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    /* 기본적으로 모두 숨김 */
+
+    /* position 부모요소, .prevbtn과 .nextbtn의 기준점 */
+    position: relative;
+
+    /* 애니메이션 효과를 위해 opacity 사용 시 */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.stadiuminfo.active {
+    display: flex;
+    /* 레이아웃 유지 */
+    opacity: 1;
+}
+
+.stadiuminfo .contentsbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 35px;
+    box-sizing: border-box;
+    gap: 40px;
+}
+
+
+/* 원형 이미지 */
+.stadiuminfo .imgbox {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.stadiuminfo .imgbox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stadiuminfo .textbox {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.stadiuminfo .textbox h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+
+.info_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.schedule {
+    align-items: flex-start;
+}
+
+.info_item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.info_item .label {
+    font-weight: 700;
+    color: #2B4A8F;
+    margin-right: 5px;
+    white-space: nowrap;
+    /* 라벨이 줄바꿈되지 않게 */
+}
+
+
+.info_item strong {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.stadiuminfo .textbox .hashtag {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.stadiuminfo .textbox .hashtag span {
+    font-size: 15px;
+    margin-right: 6px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background-color: #dde9f7;
+}
+
+
+/* 콘텐츠 하단 버튼 */
+.stadiuminfo .btnbox {
+    background-color: #EE6E29;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-radius: 0 0 36px 36px;
+    overflow: hidden;
+}
+
+.stadiuminfo .btn {
+    flex: 1;
+    height: 100%;
+    /* 부모(card-footer) 높이를 100% 채움 */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s;
+}
+
+.stadiuminfo .btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* 살짝 어두워지는 효과 */
+}
+
+.divider {
+    width: 2px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 콘텐츠 이동 버튼 */
+.nav_btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    border: none;
+    background-color: #455069;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* position 자식요소 */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.nav_btn.prev {
+    left: -25px;
+}
+
+.nav_btn.next {
+    right: -25px;
+}
+
+.nav_btn.prev:hover,
+.nav_btn.next:hover {
+    background-color: #2B4A8F;
+}
+
+
+/* map */
+.map-container {
+    width: 100%;
+    max-width: 400px;
+    /* 지도의 적절한 크기 */
+
+    position: absolute;
+    top: 100px;
+    right: 50px;
+
+    transform: scale(1.1) translateX(0) !important;
+    transition: transform 0.6s ease-in-out !important;
+}
+
+.base-map {
+    width: 100%;
+    display: block;
+}
+
+/* 구단 핀 공통 스타일 */
+.map-pin {
+    position: absolute;
+    padding: 8px 16px;
+    border-radius: 25px;
+    background: #2B4A8F;
+    color: white;
+    font-family: Pretendard;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: translate(-50%, -50%);
+    /* 중심점 맞추기 */
+}
+
+/* 마우스 올렸을 때나 클릭되었을 때 색상 변경 */
+.map-pin:hover,
+.map-pin.active {
+    background: #EE6E29;
+    /* 삼성 라이온즈 오렌지 색상 예시 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 핀 위치 */
+.pin-ssg {
+    top: 23%;
+    left: 23%;
+}
+
+.pin-lg {
+    top: 18%;
+    left: 45%;
+}
+
+.pin-kiwoom {
+    top: 25%;
+    left: 43%;
+}
+
+.pin-kt {
+    top: 34%;
+    left: 38%;
+}
+
+.pin-hanwha {
+    top: 44%;
+    left: 35%;
+}
+
+.pin-samsung {
+    top: 52%;
+    left: 75%;
+}
+
+.pin-kia {
+    top: 68%;
+    left: 32%;
+}
+
+.pin-changwon {
+    top: 65%;
+    left: 61%;
+}
+
+.pin-lotte {
+    top: 64%;
+    left: 81%;
+}
+
+
+/* 애니메이션 주기 */
+/* 1. 타이틀: 위로 이동 */
+#section2.is-view .title {
+    transform: translateY(-10px);
+    /* 위로 이동할 양 */
+}
+
+/* 2. 지도 컨테이너: 오른쪽으로 이동 */
+#section2.is-view .map-container {
+    transform: scale(1) translateX(60px) !important;
+    /* 오른쪽으로 이동할 양 */
+}
+
+/* 3. 구장 정보 카드: 투명도 0에서 1로 */
+#section2.is-view .stadiuminfo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-70px);
+}
+
+
+/* Section 3 - City */
+/* 도시 선택 탭 */
+#section3 {
+    /* background: url(../images/main/5-city/illust_bg.png) no-repeat 50px 280px; */
+    background-size: 90%;
+    overflow: hidden;
+}
+
+.citytab {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.citytab li a {
+    display: inline-block;
+    border: 1px solid #959595;
+    border-radius: 50px;
+    font-family: isamanru;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 5px 40px;
+}
+
+.citytab li a:hover,
+.citytab li .active {
+    color: #fff;
+    background-color: #2b4a8f;
+    font-weight: 500;
+}
+
+/* 메인 콘텐츠 */
+.cityinfo {
+    display: flex;
+    height: 520px;
+    margin-top: 50px;
+    /* position 부모요소, .subcard의 기준점 */
+    position: relative;
+
+    display: none;
+}
+
+.cityinfo.active {
+    display: block;
+    /* active 상태만 보여주기 */
+}
+
+.maincard {
+    width: 525px;
+    color: #fff;
+    text-align: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 60px 60px 0 60px;
+    padding: 60px;
+    box-sizing: border-box;
+}
+
+.maincard h2 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.maincard h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 20px 0 190px;
+}
+
+.maincard p {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.subcard {
+    display: flex;
+    gap: 20px;
+
+    /* position 자식요소 */
+    position: absolute;
+    top: 50px;
+    left: 380px;
+}
+
+.subcard li {
+    width: 312px;
+    height: 404px;
+    border: 1px solid #D9D9D9;
+    ;
+    border-radius: 34px;
+    text-align: left;
+    padding: 290px 20px 20px;
+    box-sizing: border-box;
+    transition: all 0.5s !important;
+
+    /* position 부모요소, .movebtn의 기준점 */
+    position: relative;
+}
+
+.text p {
+    font-weight: 500;
+}
+
+.text h2 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.hashtag {
+    margin-top: 10px;
+    color: #2B4A8F;
+    font-weight: 500;
+}
+
+.badge {
+    display: block;
+    color: #fff;
+    padding: 5px 0;
+    text-align: center;
+    width: 90px;
+    border-radius: 18px;
+    font-size: 15px;
+    font-weight: 500;
+
+    /* position 자식요소 */
+    position: absolute;
+    top: -10px;
+    left: 30px;
+}
+
+.movebtn {
+    width: 46px;
+    height: 46px;
+    background: url(../images/main/5-city/next_btn.svg) no-repeat center;
+    background-size: contain;
+
+    /* position 자식요소 */
+    position: absolute;
+    right: 20px;
+    bottom: 40px;
+}
+
+.subcard li:hover {
+    transform: scale(1.1) !important;
+}
+
+/* 카드 개별 꾸미기 */
+.cityfood,
+.citycafe,
+.citycourse {
+    background-size: cover;
+}
+
+.food {
+    background-color: #EE6E29;
+}
+
+.cityfood .movebtn:hover {
+
+    background-image: url(../images/main/5-city/next_btn_orange.svg);
+}
+
+.cafe {
+    background-color: #44B197;
+}
+
+.citycafe {
+    margin-top: 50px;
+}
+
+.citycafe .movebtn:hover {
+    background-image: url(../images/main/5-city/next_btn_green.svg);
+}
+
+.course {
+    background-color: #296EEE;
+}
+
+.citycourse .movebtn:hover {
+    background-image: url(../images/main/5-city/next_btn_blue.svg);
+    background-size: 100%;
+}
+
+/* 지역별 카드 배경화면 */
+/* 부산 */
+#busan .maincard {
+    background-image: url(../images/main/5-city/busan.png);
+}
+
+#busan .cityfood {
+    background-image: url(../images/main/5-city/busan1-food.png);
+}
+
+#busan .citycafe {
+    background-image: url(../images/main/5-city/busan2-cafe.png);
+}
+
+#busan .citycourse {
+    background-image: url(../images/main/5-city/busan3-course.png);
+}
+
+/* 광주 */
+#gwangju .maincard {
+    background-image: url(../images/main/5-city/gwangju.png);
+}
+
+#gwangju .cityfood {
+    background-image: url(../images/main/5-city/gwangju1-food.png);
+}
+
+#gwangju .citycafe {
+    background-image: url(../images/main/5-city/gwangju2-cafe.png);
+}
+
+#gwangju .citycourse {
+    background-image: url(../images/main/5-city/gwangju3-course.png);
+}
+
+/* 대구 */
+#daegu .maincard {
+    background-image: url(../images/main/5-city/daegu.png);
+}
+
+#daegu .cityfood {
+    background-image: url(../images/main/5-city/daegu1-food.png);
+}
+
+#daegu .citycafe {
+    background-image: url(../images/main/5-city/daegu2-cafe.png);
+}
+
+#daegu .citycourse {
+    background-image: url(../images/main/5-city/daegu3-course.png);
+}
+
+/* 대전 */
+#daejeon .maincard {
+    background-image: url(../images/main/5-city/daejeon.png);
+}
+
+#daejeon .cityfood {
+    background-image: url(../images/main/5-city/daejeon1-food.png);
+}
+
+#daejeon .citycafe {
+    background-image: url(../images/main/5-city/daejeon2-cafe.png);
+}
+
+#daejeon .citycourse {
+    background-image: url(../images/main/5-city/daejeon3-course.png);
+}
+
+/* 서울 */
+#seoul .maincard {
+    background-image: url(../images/main/5-city/daejeon.png);
+}
+
+#seoul .cityfood {
+    background-image: url(../images/main/5-city/daejeon1-food.png);
+}
+
+#seoul .citycafe {
+    background-image: url(../images/main/5-city/daejeon2-cafe.png);
+}
+
+#seoul .citycourse {
+    background-image: url(../images/main/5-city/daejeon3-course.png);
+}
+
+/* 수원 */
+#suwon .maincard {
+    background-image: url(../images/main/5-city/daejeon.png);
+}
+
+#suwon .cityfood {
+    background-image: url(../images/main/5-city/daejeon1-food.png);
+}
+
+#suwon .citycafe {
+    background-image: url(../images/main/5-city/daejeon2-cafe.png);
+}
+
+#suwon .citycourse {
+    background-image: url(../images/main/5-city/daejeon3-course.png);
+}
+
+/* 인천 */
+#incheon .maincard {
+    background-image: url(../images/main/5-city/daejeon.png);
+}
+
+#incheon .cityfood {
+    background-image: url(../images/main/5-city/daejeon1-food.png);
+}
+
+#incheon .citycafe {
+    background-image: url(../images/main/5-city/daejeon2-cafe.png);
+}
+
+#incheon .citycourse {
+    background-image: url(../images/main/5-city/daejeon3-course.png);
+}
+
+/* 창원 */
+#changwon .maincard {
+    background-image: url(../images/main/5-city/daejeon.png);
+}
+
+#changwon .cityfood {
+    background-image: url(../images/main/5-city/daejeon1-food.png);
+}
+
+#changwon .citycafe {
+    background-image: url(../images/main/5-city/daejeon2-cafe.png);
+}
+
+#changwon .citycourse {
+    background-image: url(../images/main/5-city/daejeon3-course.png);
+}
+
+
+/* --------------------- Section 4 - Archive --------------------- */
+#section4 {
+    overflow: hidden;
+}
+
+.long {
+    height: 1050px;
+}
+
+.archive {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.archive h2 {
+    font-size: 24px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.boxline {
+    width: 100%;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+/* 개별 꾸미기 */
+/* stadium_stamp */
+.stadium_stamps {
+    width: 528px;
+}
+
+.box1 {
+    height: 681px;
+}
+
+.progressbar {
+    display: flex;
+    align-items: center;
+}
+
+.progressbar p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.progressbar .big {
+    font-size: 26px;
+}
+
+.dots {
+    display: flex;
+    gap: 7px;
+    margin-left: 25px;
+}
+
+.dot {
+    display: block;
+    width: 27px;
+    height: 12px;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+}
+
+/* 활성화된 도트에 적용될 애니메이션 */
+.dot.active {
+    animation: fillOrange 3s ease-out infinite;
+}
+
+/* 색상이 차오르며 커지는 효과 */
+@keyframes fillOrange {
+    0% {
+        /* 처음은 회색 */
+        background-color: #D9D9D9;
+        transform: scaleX(1);
+    }
+
+    30% {
+        /* 약 0.6초 지점에 불이 들어옴 (전체 2s의 30%) */
+        background-color: #EE6E29;
+        transform: scaleX(1.1);
+    }
+
+    100% {
+        /* 다시 회색으로 돌아감 */
+        background-color: #EE6E29;
+        transform: scaleX(1);
+    }
+}
+
+/* 순차적으로 불이 들어오게 만드는 지연 시간(Delay) 설정 */
+.dot.active:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.dot.active:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.dot.active:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.dot.active:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.dot.active:nth-child(5) {
+    animation-delay: 1.0s;
+}
+
+
+.stamp {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.stamp li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 3s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 순차적 지연 시간 부여 (9개 기준) */
+.stamp li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.stamp li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.stamp li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.stamp li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.stamp li:nth-child(5) {
+    animation-delay: 1.0s;
+}
+
+.stamp li:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+.stamp li:nth-child(7) {
+    animation-delay: 1.4s;
+}
+
+.stamp li:nth-child(8) {
+    animation-delay: 1.6s;
+}
+
+.stamp li:nth-child(9) {
+    animation-delay: 1.8s;
+}
+
+.stamp .circle {
+    width: 115px;
+    height: 115px;
+    border: 1px solid #aeacac;
+    border-radius: 50%;
+    position: relative;
+
+    transition: transform 0.3s ease;
+}
+
+.stamp .circle img {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.stamp li:hover .circle {
+    transform: translateY(-5px) scale(1.05);
+    /* 호버 시 살짝 들림 */
+}
+
+/* 방문하지 않은 구장 처리 (active가 없는 경우) */
+.stamp li:not(.active) .circle img {
+    filter: grayscale(1);
+    opacity: 0.8;
+}
+
+.stamp .textbox {
+    height: 80px;
+    position: relative;
+}
+
+.stamp .cityname {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.stamp .stadiumname {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.stamp .visitdate {
+    font-size: 12px;
+    font-weight: 500;
+    color: #A3A3A3;
+}
+
+.checkicon {
+    width: 24px;
+    height: 24px;
+    background: url(../images/main/6-archive/stamp/check.png);
+    background-size: 100%;
+
+    position: absolute;
+    top: 0;
+    right: 10px;
+
+    display: none;
+    /* 기본적으로 숨김 */
+}
+
+/* active 클래스가 있을 때만 체크 아이콘 표시 */
+.stamp li.active .checkicon {
+    display: block;
+    animation: popCheck 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: 1s;
+    /* 스탬프가 나타난 후 톡 튀어나오게 */
+    transform: scale(0);
+}
+
+@keyframes popCheck {
+    to {
+        transform: scale(1);
+    }
+}
+
+
+/* recent_history */
+.recent_history {
+    width: 742px;
+}
+
+.box2 {
+    background-color: #efeeee;
+    padding: 15px;
+}
+
+.historyinfo {
+    display: flex;
+    gap: 15px;
+}
+
+.historyinfo li {
+    width: 308px;
+    height: 328px;
+    background-color: #fff;
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.historyinfo .date {
+    font-size: 14px;
+    font-weight: 500;
+    color: #EE6E29;
+}
+
+.historyinfo .stadiumname {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.historyinfo .gameteam {
+    font-size: 18px;
+    font-weight: 500;
+    color: #727171;
+}
+
+.historyinfo img {
+    display: block;
+    width: 100%;
+
+    border-radius: 10px;
+}
+
+.historyinfo p {
+    margin: 5px 0;
+}
+
+
+/* next_trip */
+.next_trip {
+    width: 742px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.box3 {
+    height: 200px;
+    display: flex
+}
+
+.next_trip .textbox {
+    margin-left: 40px;
+    text-align: left;
+
+    position: relative;
+}
+
+
+
+.next_trip .textbox h2 {
+    color: #2b4a8f;
+    font-size: 20px;
+}
+
+.next_trip .textbox p {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    padding-left: 20px;
+
+    position: relative;
+}
+
+.next_trip .textbox .check {
+    width: 12px;
+    height: 12px;
+    background: url(../images/main/6-archive/check.png) no-repeat;
+    background-size: contain;
+
+
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+
+.next_trip .textbox a {
+    display: inline-block;
+    padding: 7px 30px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 1px solid #EE6E29;
+    color: #EE6E29;
+}
+
+.next_trip .textbox a:hover {
+    background-color: #EE6E29;
+    color: #fff;
+}
+
+.next_trip .textbox img {
+    display: block;
+    width: 400px;
+
+    position: absolute;
+    right: -400px;
+    bottom: -100px;
+}
+
+
+
+/*--------------------- Section 5 - Shop ------------------------- */
+#section5 {
+    height: 950px;
+    background: url(../images/main/7-shop/background.png) no-repeat center/cover;
+    color: #fff;
+    overflow: hidden;
+}
+
+.goodstab {
+    display: flex;
+    gap: 20px;
+}
+
+.goodstab li a {
+    display: inline-flex;
+    align-items: center;
+    color: #333;
+    border-radius: 50px;
+    font-family: isamanru;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 5px 30px 5px 50px;
+
+    /* 배경 공통 설정 */
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 15px 7px;
+    background-size: 23px;
+}
+
+.goodstab li a:hover,
+.goodstab li a.active {
+    color: #fff;
+    background-color: #EE6E29;
+}
+
+.goodstab li:nth-child(1) a {
+    background-image: url(../images/main/7-shop/tshirts-b.svg);
+}
+
+.goodstab li:nth-child(1) a:hover,
+.goodstab li:nth-child(1) a.active {
+    background-image: url(../images/main/7-shop/tshirts-w.svg);
+}
+
+.goodstab li:nth-child(2) a {
+    background-image: url(../images/main/7-shop/Pencil-b.svg)
+}
+
+.goodstab li:nth-child(2) a:hover,
+.goodstab li:nth-child(2) a.active {
+    background-image: url(../images/main/7-shop/Pencil-w.svg);
+}
+
+.goodstab li:nth-child(3) a {
+    background-image: url(../images/main/7-shop/Talent-b.svg);
+}
+
+.goodstab li:nth-child(3) a:hover,
+.goodstab li:nth-child(3) a.active {
+    background-image: url(../images/main/7-shop/Talent-w.svg);
+}
+
+/* 굿즈 콘텐츠 */
+.goodsinfo {
+    margin-top: 30px;
+    display: flex;
+    color: #333;
+    display: none;
+}
+
+.goodsinfo.active {
+    display: block;
+    /* active 상태만 보여주기 */
+}
+
+.goodslist {
+    display: flex;
+    gap: 20px;
+}
+
+.goodslist li a {
+    display: block;
+}
+
+.goodslist .maingoods {
+    margin-top: 20px;
+    width: 460px;
+    height: 451px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-sizing: border-box;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.goodslist .subgoods {
+    margin-top: 130px;
+    width: 271px;
+    height: 342px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-sizing: border-box;
+    transition: all 0.5s;
+    position: relative;
+}
+
+/* 이미지 박스 */
+.goodslist .imgbox {
+    width: 100%;
+    height: 230px;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+
+    /* 배경설정 */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 110%;
+    transition: background-size 0.4s ease-out;
+}
+
+.maingoods .imgbox {
+    width: 100%;
+    height: 340px;
+}
+
+.number {
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    background-color: #EE6E29;
+    border-radius: 0 0 20px 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.goodslist li:hover .imgbox {
+    background-size: 115%;
+}
+
+
+/* 텍스트 박스 */
+.goodslist .textbox {
+    padding: 20px;
+}
+
+.goodsname {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.goodsprice {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+.tag {
+    font-size: 18px;
+    font-weight: bold;
+
+    position: absolute;
+    bottom: 90px;
+}
+
+.best {
+    color: #2B4A8F;
+}
+
+.sale {
+    color: #EE6E29;
+}
+
+.small {
+    font-size: 18px;
+}
+
+/*--------------------- Section 6 - Review ---------------------  */
+.reviewinfo {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+/* 왼쪽 탭 메뉴 (Sticky) */
+.reviewtab {
+    flex: 0 0 450px;
+    /* 탭 메뉴 너비 고정 */
+    position: sticky;
+    top: 150px;
+    /* 스크롤 시 상단에서 멈출 위치 */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tab-item .tabtitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #EE6E29;
+    margin-bottom: 10px;
+}
+
+.tab-item p {
+    font-size: 18px;
+}
+
+.tab-item a {
+    display: block;
+    border-radius: 30px;
+    border: 1px solid #EE6E29;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    transition: 0.3s;
+
+    /* 배경 공통 설정 */
+    background: #fff;
+    background-repeat: no-repeat;
+    background-position: right 30px center;
+    background-size: 50px;
+}
+
+.tab-item:nth-child(1) a {
+    background-image: url(../images/main/8-review/review_icon1_orange.png);
+}
+
+.tab-item:nth-child(2) a {
+    background-image: url(../images/main/8-review/review_icon2_orange.png);
+}
+
+.tab-item:nth-child(3) a {
+    background-image: url(../images/main/8-review/review_icon3_orange.png);
+}
+
+/* 활성화 탭 */
+.tab-item.active a {
+    background-color: #EE6E29;
+    color: #fff;
+}
+
+.tab-item.active .tabtitle {
+    color: #fff;
+}
+
+.tab-item:nth-child(1).active a {
+    background-image: url(../images/main/8-review/review_icon1_white.png);
+}
+
+.tab-item:nth-child(2).active a {
+    background-image: url(../images/main/8-review/review_icon2_white.png);
+}
+
+.tab-item:nth-child(3).active a {
+    background-image: url(../images/main/8-review/review_icon3_white.png);
+}
+
+
+/* 오른쪽 콘텐츠 영역 */
+.reviewcontents {
+    flex: 1;
+}
+
+.review-section {
+    display: none;
+    /* 기본적으로 숨김 */
+}
+
+.review-section.active {
+    display: block;
+    /* 활성화된 섹션만 표시 */
+}
+
+/* 두 개의 열을 나란히 배치 */
+.review-layout {
+    display: flex;
+    gap: 30px;
+    /* 카드 사이 간격 */
+    align-items: flex-start;
+}
+
+/* 각 열의 설정 */
+.review-col {
+    flex: 1;
+    /* 1:1 비율로 나눔 */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 오른쪽 열만 위로 올리기 */
+.col-right {
+    margin-top: -100px;
+}
+
+.reviewcard {
+    width: 100%;
+    min-width: 400px;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    box-sizing: border-box;
+
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+}
+
+.reviewcard .citytag {
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 30px;
+}
+
+.reviewcard .reviewtitle {
+    color: #2B4A8F;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.reviewcard span {
+    color: #A3A3A3;
+    margin: 0 30px 0 0
+}
+
+.reviewcard .reviewtext {
+    margin: 20px 0;
+    height: 75px;
+}
+
+.reviewcard img {
+    display: block;
+    width: 100%;
+    height: 200px;
+}
+
+/* 1열 (왼쪽) 설정 */
+.card-left {
+    top: 80px;
+    /* 1열이 멈추는 지점 */
+}
+
+/* 2열 (오른쪽) 설정 - 이미지처럼 더 위에서 시작 */
+.card-right {
+    top: 40px;
+    /* 2열이 멈추는 지점 (1열보다 높게) */
+}
+
+/* 2열의 첫 번째 카드를 위로 바짝 올리기 */
+.card-right:first-of-type {
+    margin-top: -100px;
+    /* 시안처럼 비대칭 시작 지점 생성 */
+}
+
+/* 카드에 마우스를 올렸을 때 살짝 떠오르는 부드러운 효과 */
+.reviewcard:hover {
+    transform: translateY(-10px);
+}
+
+
+/* --------------------- Section 7 - CTA ---------------------*/
+#section7 {
+    text-align: center;
+    height: 700px;
+}
+
+#section7 h1 {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    padding-top: 200px;
+}
+
+.cta {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 500;
+    color: #EE6E29;
+    margin-top: 40px;
+    border: 3px solid #EE6E29;
+    border-radius: 70px;
+    padding: 10px 40px;
+}
+
+.cta:hover {
+    color: #fff;
+    background-color: #EE6E29;
+}
+
+/* 로고슬라이드 */
+#logoslide {
+    border-top: 1px solid #b1b1b1;
+}
+
+#logoslide .inner {
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#logoslide .swiper-slide {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+#logoslide .swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* --------------------- Footer --------------------- */
+#footer {
+    height: 350px;
+    background-color: #333;
+}
+
+.inner_footer {
+    width: 1320px;
+    height: 350px;
+    margin: 0 auto;
+    padding: 120px 0;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+.footerlogo {
+    opacity: 0.9;
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+
+.info li {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 200;
+    opacity: 0.9;
+}
+
+.info strong {
+    font-weight: 500;
+}
+
+.link li {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0;
+
+    opacity: 0.9;
+}
+
+.link li:hover {
+    color: #EE6E29;
+}
+
+.call {
+    width: 350px;
+    height: 50px;
+    background-color: #595858;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    gap: 30px;
+    font-size: 16px;
+}
+
+.call strong {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.sns {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 100px;
+}
+
+.sns li {
+    opacity: 0.8;
+}
+
+.sns li:hover {
+    opacity: 1;
+}
+
+.copyright {
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+}
+
+
+/* ■ ■ ■ ■ ■ TOP 버튼  ■ ■ ■ ■ ■*/
+.br-top-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    /* 이미지 크기에 맞게 조절 */
+    height: 60px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+
+    /* 초기 상태: 숨김 */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 스크롤 시 등장 */
+.br-top-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 이미지 기본 설정 */
+.br-top-btn img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+}
+
+
+/* --- 호버 인터랙션 --- */
+.br-top-btn:hover {
+    transform: translateY(-10px);
+    /* 위로 살짝 점프 */
+}
+
+
+/* 클릭했을 때 살짝 작아지는 피드백 */
+.br-top-btn:active {
+    transform: scale(0.9);
+}
+
+
+/* ■ ■ ■ ■ ■ 캐릭터 애니메이션  ■ ■ ■ ■ ■ */
+.title {
+    position: relative;
+}
+
+.character {
+    width: 120px;
+    height: 120px;
+}
+
+.char0 {
+    position: absolute;
+    right: 270px;
+    bottom: -20px;
+}
+
+.char1 {
+    position: absolute;
+    right: 80px;
+    bottom: 24px;
+}
+
+.char2 {
+    position: absolute;
+    right: 200px;
+    bottom: 0;
+}
+
+.char3 {
+    position: absolute;
+    right: 200px;
+    bottom: 0;
+}
+
+.char4 {
+    position: absolute;
+    right: 650px;
+    bottom: -20px;
+}
+
+.char5 {
+    position: absolute;
+    right: 650px;
+    bottom: -20px;
+}
+
+
+/* 캐릭터 둥둥 효과 */
+.character img {
+    width: 100%;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+/* 그림자 */
+.character::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 60%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    animation: shadow 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes shadow {
+    0% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: translateX(-50%) scale(0.85);
+        opacity: 0.08;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.15;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(-2deg);
+    }
+}
