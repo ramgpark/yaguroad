@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1360">
+    <!-- 브라우저 뷰포트 너비를 1360px로 고정하여 페이지를 그리도록 설정 -->
+    <title>야구로드</title>
+
+    <!-- 웹폰트 연결 -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="css/isamanru.css">
+
+    <!-- aos 연결 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- swiper 연결 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 외부 css 연결 -->
+    <link rel="stylesheet" href="css/main_style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- header 시작-->
+        <div id="header">
+            <div class="inner_header">
+                <h1 class="logo">
+                    <a href="index.html"><img src="./images/main/1-header/main_logo.svg" alt="메인로고"></a>
+                </h1>
+
+                <ul class="gnb">
+                    <li><a href="#section1">BRAND</a></li>
+                    <li><a href="travel.html">TRAVEL</a></li>
+                    <li><a href="#section4">ARCHIVE</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="community.html">COMMUNITY</a></li>
+                </ul>
+
+                <ul class="util">
+                    <li class="login" data-tooltip="마이페이지"><a href="#"><img src="./images/main/1-header/Profile.svg"
+                                alt="로그인"></a>
+                    </li>
+                    <li class="join" data-tooltip="장바구니"><a href="#"><img src="./images/main/1-header/Cart.svg"
+                                alt="회원가입"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- header 끝-->
+
+        <!-- visual 시작-->
+        <div id="visual">
+            <!-- 야구가 있는 날, 도시를 걷다 -->
+            <div class="typing1"></div>
+
+            <!-- Walk the City on Game Day -->
+            <div class="typing2"></div>
+
+            <div class="banner">
+                <div class="slide slide1"></div>
+                <div class="slide slide2"></div>
+                <div class="slide slide3"></div>
+            </div>
+
+            <span></span> <!-- 불투명박스 -->
+        </div>
+        <!-- visual 끝-->
+
+        <!-- section1 시작-->
+        <div id="section1">
+            <div class="inner">
+                <div class="title">
+                    <h1 class="titletext" data-aos="fade-down" data-aos-duration="1000">
+                        <span class="blue">야구</span>를 경험하는 새로운 방식
+                    </h1>
+                    <p class="subtext" data-aos="fade-down" data-aos-duration="1000">경기, 도시, 그리고 그날의 순간을 하나의 경험으로 만듭니다
+                    </p>
+
+                    <div class="character char0" data-aos="fade-left" data-aos-duration="2000">
+                        <img src="./images/main/3-brand/brand_character.png" alt="캐릭터">
+                    </div>
+                </div>
+
+                <ul class="keyword">
+                    <li data-aos="flip-left" data-aos-duration="2000">
+                        <h2>Journey</h2>
+                        <p>경기장을 향해 이동하는 순간부터 <br>
+                            여행은 시작됩니다</p>
+                    </li>
+                    <li data-aos="flip-left" data-aos-duration="2000">
+                        <h2>Archive</h2>
+                        <p>그날의 경기, 그날의 감정을 <br>
+                            기록합니다</p>
+                    </li>
+                    <li data-aos="flip-left" data-aos-duration="2000">
+                        <h2>Share</h2>
+                        <p>같은 경험을 나누며 <br> 팬들은 연결됩니다</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- section1 끝-->
+
+        <!-- section2 시작-->
+        <div id="section2">
+            <div class="inner">
+                <div class="title">
+                    <h1 class="titletext" data-aos="fade-down" data-aos-duration="1000">
+                        <span class="orange">야구로드</span>와 함께 떠나는 <br> 전국 구장 투어
+                    </h1>
+                    <p class="subtext" data-aos="fade-down" data-aos-duration="1000">지도에서 지역을 선택하고 구장 정보를 한눈에 확인해보세요</p>
+
+                    <div class="character char1" data-aos="fade-left" data-aos-duration="2000">
+                        <img src="./images/main/4-stadium/stadium_character.png" alt="">
+                    </div>
+                </div>
+
+                <div id="samsung" class="stadiuminfo active">
+
+                    <!-- 이동 버튼 -->
+                    <button class="nav_btn prev"><i class="fas fa-chevron-left"></i></button>
+
+                    <button class="nav_btn next"><i class="fas fa-chevron-right"></i></button>
+
+
+                    <div class="contentsbox">
+                        <div class="imgbox">
+                            <img src="./images/main/4-stadium/samsung1.png" alt="삼성라이온즈파크">
+                        </div>
+
+                        <div class="textbox">
+                            <h2>대구삼성라이온즈 파크</h2>
+
+                            <div class="info_item location">
+                                <img src="./images/main/4-stadium/mappin.svg" alt="지도 핀">
+                                <span class="label">위치 :</span>
+                                <span class="text">대구 수성구 야구전설로 1 대구삼성라이온즈파크</span>
+                            </div>
+
+                            <div class="info_item parking">
+                                <img src="./images/main/4-stadium/parking.svg" alt="주차">
+                                <span class="label">주차 : </span>
+                                <span class="text">전용 주차장, 대공원역 공영주차장 이용 가능</span>
+                            </div>
+
+                            <div class="info_item schedule">
+                                <img src="./images/main/4-stadium/calendar.svg" alt="캘린더">
+                                <div>
+                                    <span class="label">다음 경기 일정 : </span>
+                                    <p class="text">2026.04.07(화) 18:30 <strong>LG VS 삼성</strong></p>
+                                </div>
+                            </div>
+
+                            <div class="hashtag">
+                                <span>#홈런공장</span>
+                                <span>#캠핑존</span>
+                                <span>#블루존</span>
+                                <span>#주말은빠르게매진</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btnbox">
+                        <a href="#" class="btn">티켓 예매하기</a>
+                        <div class="divider"></div>
+                        <a href="#" class="btn">추천 코스보기</a>
+                    </div>
+                </div>
+
+
+                <!-- 지도 맵 -->
+                <div class="map-container">
+                    <img src="./images/main/4-stadium/map.png" alt="전국 야구장 지도" class="base-map" data-aos="fade-left"
+                        data-aos-duration="1000">
+
+                    <button class="map-pin pin-ssg" data-team="ssg">SSG</button>
+                    <button class="map-pin pin-lg" data-team="lg">LG / 두산</button>
+                    <button class="map-pin pin-kiwoom" data-team="kiwoom">키움</button>
+                    <button class="map-pin pin-kt" data-team="kt">KT</button>
+                    <button class="map-pin pin-hanwha" data-team="hanwha">한화</button>
+                    <button class="map-pin pin-samsung active" data-team="samsung">삼성</button>
+                    <button class="map-pin pin-kia" data-team="kia">기아</button>
+                    <button class="map-pin pin-changwon" data-team="nc">NC</button>
+                    <button class="map-pin pin-lotte" data-team="lotte">롯데</button>
+                </div>
+            </div>
+        </div>
+        <!-- section2 끝-->
+
+        <!-- section3 시작-->
+        <div id="section3">
+            <div class="inner">
+                <div class="title">
+                    <h1 class="titletext" data-aos="fade-down" data-aos-duration="1000">
+                        <span class="blue">구장</span>을 따라 즐기는 <span class="blue">도시</span>여행
+                    </h1>
+                    <p class="subtext" data-aos="fade-down" data-aos-duration="1000">맛집부터 카페까지 한 번에! 야구장 주변 1박 2일 여행
+                        코스를
+                        둘러보세요</p>
+
+                    <div class="character char2" data-aos="fade-left" data-aos-duration="2000">
+                        <img src="./images/main/5-city/city_character.png" alt="">
+                    </div>
+                </div>
+
+                <!-- 도시 선택 탭 -->
+                <ul class="citytab">
+                    <li><a href="#" data-tab="gwangju">광주</a></li>
+                    <li><a href="#" data-tab="daegu">대구</a></li>
+                    <li><a href="#" data-tab="daejeon">대전</a></li>
+                    <li><a href="#" class="active" data-tab="busan">부산</a></li>
+                    <li><a href="#" data-tab="seoul">서울</a></li>
+                    <li><a href="#" data-tab="suwon">수원</a></li>
+                    <li><a href="#" data-tab="incheon">인천</a></li>
+                    <li><a href="#" data-tab="changwon">창원</a></li>
+                </ul>
+
+                <!-- 메인 콘텐츠 -->
+                <div id="busan" class="cityinfo active">
+                    <div class="maincard" data-aos="fade-right" data-aos-duration="1000">
+                        <h2>부산</h2>
+                        <h3>바다와 야구를 함께 <br>즐길 수 있는 도시</h3>
+                        <p>#사직야구장</p>
+                        <p>#롯데자이언츠</p>
+                    </div>
+
+                    <ul class="subcard">
+                        <li class="cityfood" data-aos="fade-right" data-aos-duration="2000">
+                            <span class="badge food">맛집</span>
+
+                            <div class="text">
+                                <p>경기 후 가기 좋은 로컬 맛집</p>
+                                <h2>필수 맛집 TOP10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 후</span>
+                                    <span>#선수맛집</span>
+                                    <span>#로컬맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+
+                        <li class="citycafe" data-aos="fade-up" data-aos-duration="2000">
+                            <span class="badge cafe">카페</span>
+
+                            <div class="text">
+                                <p>경기 전 시간 보내기 좋은 카페</p>
+                                <h2>감성 카페 TOP 10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전</span>
+                                    <span>#감성 카페</span>
+                                    <span>#뷰맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                        <li class="citycourse" data-aos="fade-left" data-aos-duration="2000">
+                            <span class="badge course">여행 코스</span>
+
+                            <div class="text">
+                                <p>직관을 중심으로 즐기는 여행 코스</p>
+                                <h2>1박 2일 코스 추천</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전후</span>
+                                    <span>#도시여행</span>
+                                    <span>#원정경기</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="gwangju" class="cityinfo">
+                    <div class="maincard">
+                        <h2>광주</h2>
+                        <h3>전통의 강호와 맛의 향연이 <br> 펼쳐지는 도시</h3>
+                        <p>#기아챔피언스필드</p>
+                        <p>#기아타이거즈</p>
+                    </div>
+
+                    <ul class="subcard">
+                        <li class="cityfood">
+                            <span class="badge food">맛집</span>
+
+                            <div class="text">
+                                <p>경기 후 가기 좋은 로컬 맛집</p>
+                                <h2>필수 맛집 TOP10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 후</span>
+                                    <span>#선수맛집</span>
+                                    <span>#로컬맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+
+                        <li class="citycafe">
+                            <span class="badge cafe">카페</span>
+
+                            <div class="text">
+                                <p>경기 전 시간 보내기 좋은 카페</p>
+                                <h2>감성 카페 TOP 10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전</span>
+                                    <span>#감성 카페</span>
+                                    <span>#뷰맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                        <li class="citycourse">
+                            <span class="badge course">여행 코스</span>
+
+                            <div class="text">
+                                <p>직관을 중심으로 즐기는 여행 코스</p>
+                                <h2>1박 2일 코스 추천</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전후</span>
+                                    <span>#도시여행</span>
+                                    <span>#원정경기</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="daegu" class="cityinfo">
+                    <div class="maincard">
+                        <h2>대구</h2>
+                        <h3>뜨거운 열정과 사자의 포효가 <br> 가득한 도시</h3>
+                        <p>#라이온즈파크</p>
+                        <p>#삼성라이온즈</p>
+                    </div>
+
+                    <ul class="subcard">
+                        <li class="cityfood">
+                            <span class="badge food">맛집</span>
+
+                            <div class="text">
+                                <p>경기 후 가기 좋은 로컬 맛집</p>
+                                <h2>필수 맛집 TOP10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 후</span>
+                                    <span>#선수맛집</span>
+                                    <span>#로컬맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+
+                        <li class="citycafe">
+                            <span class="badge cafe">카페</span>
+
+                            <div class="text">
+                                <p>경기 전 시간 보내기 좋은 카페</p>
+                                <h2>감성 카페 TOP 10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전</span>
+                                    <span>#감성 카페</span>
+                                    <span>#뷰맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                        <li class="citycourse">
+                            <span class="badge course">여행 코스</span>
+
+                            <div class="text">
+                                <p>직관을 중심으로 즐기는 여행 코스</p>
+                                <h2>1박 2일 코스 추천</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전후</span>
+                                    <span>#도시여행</span>
+                                    <span>#원정경기</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="daejeon" class="cityinfo">
+                    <div class="maincard">
+                        <h2>대전</h2>
+                        <h3>포근한 낭만과 보문산 아래 <br> 울림이 있는 도시</h3>
+                        <p>#한화생명볼파크</p>
+                        <p>#한화이글스</p>
+                    </div>
+
+                    <ul class="subcard">
+                        <li class="cityfood">
+                            <span class="badge food">맛집</span>
+
+                            <div class="text">
+                                <p>경기 후 가기 좋은 로컬 맛집</p>
+                                <h2>필수 맛집 TOP10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 후</span>
+                                    <span>#선수맛집</span>
+                                    <span>#로컬맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+
+                        <li class="citycafe">
+                            <span class="badge cafe">카페</span>
+
+                            <div class="text">
+                                <p>경기 전 시간 보내기 좋은 카페</p>
+                                <h2>감성 카페 TOP 10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전</span>
+                                    <span>#감성 카페</span>
+                                    <span>#뷰맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                        <li class="citycourse">
+                            <span class="badge course">여행 코스</span>
+
+                            <div class="text">
+                                <p>직관을 중심으로 즐기는 여행 코스</p>
+                                <h2>1박 2일 코스 추천</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전후</span>
+                                    <span>#도시여행</span>
+                                    <span>#원정경기</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="seoul" class="cityinfo">
+                    <div class="maincard">
+                        <h2>서울</h2>
+                        <h3>전통의 강호와 맛의 향연이 <br> 펼쳐지는 도시</h3>
+                        <p>#잠실야구장 #스카이돔</p>
+                        <p>#LG트윈스 #두산베어스 #키움히어로즈</p>
+                    </div>
+
+                    <ul class="subcard">
+                        <li class="cityfood">
+                            <span class="badge food">맛집</span>
+
+                            <div class="text">
+                                <p>경기 후 가기 좋은 로컬 맛집</p>
+                                <h2>필수 맛집 TOP10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 후</span>
+                                    <span>#선수맛집</span>
+                                    <span>#로컬맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+
+                        <li class="citycafe">
+                            <span class="badge cafe">카페</span>
+
+                            <div class="text">
+                                <p>경기 전 시간 보내기 좋은 카페</p>
+                                <h2>감성 카페 TOP 10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전</span>
+                                    <span>#감성 카페</span>
+                                    <span>#뷰맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                        <li class="citycourse">
+                            <span class="badge course">여행 코스</span>
+
+                            <div class="text">
+                                <p>직관을 중심으로 즐기는 여행 코스</p>
+                                <h2>1박 2일 코스 추천</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전후</span>
+                                    <span>#도시여행</span>
+                                    <span>#원정경기</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="suwon" class="cityinfo">
+                    <div class="maincard">
+                        <h2>수원</h2>
+                        <h3>뜨거운 열정과 사자의 포효가 <br> 가득한 도시</h3>
+                        <p>#KT위즈파크</p>
+                        <p>#KT위즈</p>
+                    </div>
+
+                    <ul class="subcard">
+                        <li class="cityfood">
+                            <span class="badge food">맛집</span>
+
+                            <div class="text">
+                                <p>경기 후 가기 좋은 로컬 맛집</p>
+                                <h2>필수 맛집 TOP10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 후</span>
+                                    <span>#선수맛집</span>
+                                    <span>#로컬맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+
+                        <li class="citycafe">
+                            <span class="badge cafe">카페</span>
+
+                            <div class="text">
+                                <p>경기 전 시간 보내기 좋은 카페</p>
+                                <h2>감성 카페 TOP 10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전</span>
+                                    <span>#감성 카페</span>
+                                    <span>#뷰맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                        <li class="citycourse">
+                            <span class="badge course">여행 코스</span>
+
+                            <div class="text">
+                                <p>직관을 중심으로 즐기는 여행 코스</p>
+                                <h2>1박 2일 코스 추천</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전후</span>
+                                    <span>#도시여행</span>
+                                    <span>#원정경기</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="incheon" class="cityinfo">
+                    <div class="maincard">
+                        <h2>인천</h2>
+                        <h3>포근한 낭만과 보문산 아래 <br> 울림이 있는 도시</h3>
+                        <p>#SSG랜더스필드</p>
+                        <p>#SSG랜더스</p>
+                    </div>
+
+                    <ul class="subcard">
+                        <li class="cityfood">
+                            <span class="badge food">맛집</span>
+
+                            <div class="text">
+                                <p>경기 후 가기 좋은 로컬 맛집</p>
+                                <h2>필수 맛집 TOP10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 후</span>
+                                    <span>#선수맛집</span>
+                                    <span>#로컬맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+
+                        <li class="citycafe">
+                            <span class="badge cafe">카페</span>
+
+                            <div class="text">
+                                <p>경기 전 시간 보내기 좋은 카페</p>
+                                <h2>감성 카페 TOP 10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전</span>
+                                    <span>#감성 카페</span>
+                                    <span>#뷰맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                        <li class="citycourse">
+                            <span class="badge course">여행 코스</span>
+
+                            <div class="text">
+                                <p>직관을 중심으로 즐기는 여행 코스</p>
+                                <h2>1박 2일 코스 추천</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전후</span>
+                                    <span>#도시여행</span>
+                                    <span>#원정경기</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="changwon" class="cityinfo">
+                    <div class="maincard">
+                        <h2>창원</h2>
+                        <h3>포근한 낭만과 보문산 아래 <br> 울림이 있는 도시</h3>
+                        <p>#NC파크</p>
+                        <p>#NC다이노스</p>
+                    </div>
+
+                    <ul class="subcard">
+                        <li class="cityfood">
+                            <span class="badge food">맛집</span>
+
+                            <div class="text">
+                                <p>경기 후 가기 좋은 로컬 맛집</p>
+                                <h2>필수 맛집 TOP10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 후</span>
+                                    <span>#선수맛집</span>
+                                    <span>#로컬맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+
+                        <li class="citycafe">
+                            <span class="badge cafe">카페</span>
+
+                            <div class="text">
+                                <p>경기 전 시간 보내기 좋은 카페</p>
+                                <h2>감성 카페 TOP 10</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전</span>
+                                    <span>#감성 카페</span>
+                                    <span>#뷰맛집</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                        <li class="citycourse">
+                            <span class="badge course">여행 코스</span>
+
+                            <div class="text">
+                                <p>직관을 중심으로 즐기는 여행 코스</p>
+                                <h2>1박 2일 코스 추천</h2>
+                                <div class="hashtag">
+                                    <span>#직관 전후</span>
+                                    <span>#도시여행</span>
+                                    <span>#원정경기</span>
+                                </div>
+                                <a href="#" class="movebtn"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- section3 끝-->
+
+        <!-- section4 시작-->
+        <div id="section4">
+            <div class="inner long">
+                <div class="title">
+                    <h1 class="titletext" data-aos="fade-down" data-aos-duration="1000">
+                        야구로 채워가는 나만의 여행 <span class="orange"> 기록</span>
+                    </h1>
+                    <p class="subtext" data-aos="fade-down" data-aos-duration="1000">전국 구장 도장 깨기부터 승요 인증까지, 당신의 직관
+                        히스토리를
+                        완성하세요</p>
+
+                    <div class="character char3" data-aos="fade-left" data-aos-duration="2000">
+                        <img src="./images/main/6-archive/archive_character.png" alt="">
+                    </div>
+                </div>
+                <div class="archive">
+                    <section class="stadium_stamps">
+                        <h2>구장 스탬프 컬렉션</h2>
+                        <div class="boxline box1">
+                            <div class="progressbar">
+                                <p><span class="orange big">5</span> / 9개 구장 방문</p>
+                                <div class="dots">
+                                    <span class="dot active"></span>
+                                    <span class="dot active"></span>
+                                    <span class="dot active"></span>
+                                    <span class="dot active"></span>
+                                    <span class="dot active"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+
+                            <ul class="stamp" data-aos="fade-up" data-aos-duration="1000">
+                                <li class="active">
+                                    <div class="circle">
+                                        <img src="./images/main/6-archive/stamp/busan.png" alt="부산">
+                                    </div>
+                                    <div class="textbox">
+                                        <p class="cityname">부산</p>
+                                        <p class="stadiumname">사직야구장</p>
+                                        <p class="visitdate">2026.04.17 방문</p>
+                                        <span class="checkicon"></span>
+                                    </div>
+                                </li>
+                                <li class="active">
+                                    <div class="circle">
+                                        <img src="./images/main/6-archive/stamp/gwangju.png" alt="광주">
+                                    </div>
+                                    <div class="textbox">
+                                        <p class="cityname">광주</p>
+                                        <p class="stadiumname">기아챔피언스필드</p>
+                                        <p class="visitdate">2025.09.01 방문</p>
+                                        <span class="checkicon"></span>
+                                    </div>
+                                </li>
+                                <li class="active">
+                                    <div class="circle">
+                                        <img src="./images/main/6-archive/stamp/daejeon.png" alt="대전">
+                                    </div>
+                                    <div class="textbox">
+                                        <p class="cityname">대전</p>
+                                        <p class="stadiumname">한화생명볼파크</p>
+                                        <p class="visitdate">2025.08.14 방문</p>
+                                        <span class="checkicon"></span>
+                                    </div>
+                                </li>
+                                <li class="active">
+                                    <div class="circle">
+                                        <img src="./images/main/6-archive/stamp/daegu.png" alt="대구">
+                                    </div>
+                                    <div class="textbox">
+                                        <p class="cityname">대구</p>
+                                        <p class="stadiumname">삼성라이온즈파크</p>
+                                        <p class="visitdate">2025.06.28 방문</p>
+                                        <span class="checkicon"></span>
+                                    </div>
+                                </li>
+                                <li class="active">
+                                    <div class="circle">
+                                        <img src="./images/main/6-archive/stamp/seoul.png" alt="서울">
+                                    </div>
+                                    <div class="textbox">
+                                        <p class="cityname">서울</p>
+                                        <p class="stadiumname">잠실야구장</p>
+                                        <p class="visitdate">2025.05.05 방문</p>
+                                        <span class="checkicon"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="circle">
+                                        <img src="./images/main/6-archive/stamp/gocheok.png" alt="고척">
+                                    </div>
+                                    <div class="textbox">
+                                        <p class="cityname">고척</p>
+                                        <p class="stadiumname">스카이돔</p>
+                                        <span class="checkicon"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="circle">
+                                        <img src="./images/main/6-archive/stamp/suwon.png" alt="수원">
+                                    </div>
+                                    <div class="textbox">
+                                        <p class="cityname">수원</p>
+                                        <p class="stadiumname">KT위즈파크</p>
+                                        <span class="checkicon"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="circle">
+                                        <img src="./images/main/6-archive/stamp/incheon.png" alt="인천">
+                                    </div>
+                                    <div class="textbox">
+                                        <p class="cityname">인천</p>
+                                        <p class="stadiumname">SSG 랜더스필드</p>
+                                        <span class="checkicon"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="circle">
+                                        <img src="./images/main/6-archive/stamp/changwon.png" alt="창원">
+                                    </div>
+                                    <div class="textbox">
+                                        <p class="cityname">창원</p>
+                                        <p class="stadiumname">NC파크</p>
+                                        <span class="checkicon"></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="recent_history">
+                        <h2>최근 직관 기록</h2>
+                        <div class="boxline box2">
+                            <ul class="historyinfo" data-aos="fade-up" data-aos-duration="1000">
+                                <li>
+                                    <p class="date">2025.09.01</p>
+                                    <p class="stadiumname">광주 기아챔피언스필드</p>
+                                    <p class="gameteam">롯데 vs 기아</p>
+                                    <img src="./images/main/6-archive/1.png" alt="사진">
+                                    <p class="content">이 날 전석 매진에 선발 투수 대투수 양현종 2000 삼진아웃 달성🎉 ㅠㅠ멋져요 진짜</p>
+                                </li>
+                                <li>
+                                    <p class="date">2025.08.11</p>
+                                    <p class="stadiumname">대전 한화생명볼파크</p>
+                                    <p class="gameteam">롯데 vs 한화</p>
+                                    <img src="./images/main/6-archive/2.png" alt="사진">
+                                    <p class="content">윤동희 역전 끝내기 안타 너무 짜릿했음 승리요정 인증✌️</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="next_trip">
+                        <h2>다음은 어디로 떠나볼까요?</h2>
+                        <div class="boxline box3">
+                            <img src="./images/main/6-archive/next.png" alt="사진" style="border-radius: 10px;">
+                            <div class="textbox">
+                                <h2>서울 잠실야구장</h2>
+                                <p><span class="check"></span>맛집과 카페가 가득한 야구원정 성지</p>
+                                <p><span class="check"></span>열정 가득한 응원 문화</p>
+                                <a href="#">여행코스 보기 →</a>
+                                <img src="./images/main/6-archive/illust.png" alt="">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- section4 끝-->
+
+        <!-- section5 시작-->
+        <div id="section5">
+            <div class="inner">
+                <div class="title title-left">
+                    <h1 class="titletext" data-aos="fade-down" data-aos-duration="1000">
+                        야구여행을 완성하는 <span class="orange"> 굿즈 :-)</span>
+                    </h1>
+                    <p class="subtext" data-aos="fade-down" data-aos-duration="1000">직관의 하루를 더 특별하게 만들어줄 아이템을 만나보세요</p>
+
+                    <div class="character char4" data-aos="fade-left" data-aos-duration="2000">
+                        <img src="./images/main/7-shop/shop_character.png" alt="">
+                    </div>
+                </div>
+
+                <ul class="goodstab">
+                    <li><a href="#" class="active" data-tab="fashion">패션굿즈</a></li>
+                    <li><a href="#" data-tab="record">기록굿즈</a></li>
+                    <li><a href="#" data-tab="collect">수집굿즈</a></li>
+                </ul>
+
+                <div id="fashion" class="goodsinfo active" data-aos="fade-left" data-aos-duration="1000">
+                    <ul class="goodslist">
+                        <li class="maingoods">
+                            <a href="#">
+                                <div class="imgbox" style="background-image: url(../images/main/7-shop/fashion/1.png);">
+                                    <span class="number">1</span>
+                                </div>
+
+                                <div class="textbox">
+                                    <p class="tag best">BEST</p>
+                                    <p class="goodsname">야구로드 시그니처 점퍼</p>
+                                    <p class="goodsprice">67,000원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="subgoods">
+                            <a href="#">
+                                <div class="imgbox" style="background-image: url(../images/main/7-shop/fashion/2.png);">
+                                    <span class="number">2</span>
+                                </div>
+
+                                <div class="textbox">
+                                    <p class="goodsname">야구로드 반팔 티셔츠</p>
+                                    <p class="goodsprice"><span class="orange small">10% </span>21,600원</p>
+                                    <p class="tag sale">SALE</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="subgoods">
+                            <a href="#">
+                                <div class="imgbox" style="background-image: url(../images/main/7-shop/fashion/3.png);">
+                                    <span class="number">3</span>
+                                </div>
+
+                                <div class="textbox">
+                                    <p class="goodsname">베이직 볼캡(2 Color)</p>
+                                    <p class="goodsprice">18,000원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="subgoods">
+                            <a href="#">
+                                <div class="imgbox" style="background-image: url(../images/main/7-shop/fashion/4.png);">
+                                    <span class="number">4</span>
+                                </div>
+
+                                <div class="textbox">
+                                    <p class="goodsname">야구로드 응원타월</p>
+                                    <p class="goodsprice">6,000원</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="record" class="goodsinfo">
+                    <ul class="goodslist">
+                        <li class="maingoods">
+                            <a href="#">
+                                <div class="imgbox" style="background-image: url(../images/main/7-shop/record/1.png);">
+                                    <span class="number">1</span>
+                                </div>
+
+                                <div class="textbox">
+                                    <p class="goodsname">야구로드 직관기록노트</p>
+                                    <p class="goodsprice">15,000원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="subgoods">
+                            <a href="#">
+                                <div class="imgbox" style="background-image: url(../images/main/7-shop/record/2.png);">
+                                    <span class="number">2</span>
+                                </div>
+
+                                <div class="textbox">
+                                    <p class="goodsname">야구로드 구장 스탬프</p>
+                                    <p class="goodsprice">12,000원</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="collect" class="goodsinfo">
+                    <ul class="goodslist">
+                        <li class="maingoods">
+                            <a href="#">
+                                <div class="imgbox" style="background-image: url(../images/main/7-shop/collect/1.png);">
+                                    <span class="number">1</span>
+                                </div>
+
+                                <div class="textbox">
+                                    <p class="tag best">BEST</p>
+                                    <p class="goodsname">야구로드 포토카드</p>
+                                    <p class="goodsprice">11,000원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="subgoods">
+                            <a href="#">
+                                <div class="imgbox" style="background-image: url(../images/main/7-shop/collect/4.png);">
+                                    <span class="number">2</span>
+                                </div>
+
+                                <div class="textbox">
+                                    <p class="tag sale">SALE</p>
+                                    <p class="goodsname">야구로드 심볼 핀뱃지</p>
+                                    <p class="goodsprice"><span class="orange small">10% </span>3,900원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="subgoods">
+                            <a href="#">
+                                <div class="imgbox" style="background-image: url(../images/main/7-shop/collect/3.png);">
+                                    <span class="number">3</span>
+                                </div>
+
+                                <div class="textbox">
+                                    <p class="goodsname">야구로드 3종 뱃지</p>
+                                    <p class="goodsprice">8,900원</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="subgoods">
+                            <a href="#">
+                                <div class="imgbox" style="background-image: url(../images/main/7-shop/collect/2.png);">
+                                    <span class="number">4</span>
+                                </div>
+
+                                <div class="textbox">
+                                    <p class="goodsname">야구로드 스티커세트</p>
+                                    <p class="goodsprice">6,000원</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- section5 끝-->
+
+        <!-- section6 시작-->
+        <div id="section6">
+            <div class="inner">
+                <div class="title title-left">
+                    <h1 class="titletext" data-aos="fade-down" data-aos-duration="1000">
+                        야구의 순간을 <span class="blue">함께 나누다</span>
+                    </h1>
+                    <p class="subtext" data-aos="fade-down" data-aos-duration="1200">직관 후기부터 여행의 기억까지 팬들의 다양한 경험을 만나보세요
+                    </p>
+
+                    <div class="character char5" data-aos="fade-left" data-aos-duration="2000">
+                        <img src="./images/main/8-review/review_character.png" alt="캐릭터">
+                    </div>
+                </div>
+
+                <div class="reviewinfo">
+                    <ul class="reviewtab">
+                        <li class="tab-item active" data-tab="stadium-reviews">
+                            <a href="#">
+                                <p class="tabtitle">경기장 · 좌석 후기</p>
+                                <p>직접 다녀온 팬들의 생생한 경험으로 <br> 구장과 좌석 정보를 미리 확인해보세요</p>
+                            </a>
+                        </li>
+                        <li class="tab-item" data-tab="travel-reviews">
+                            <a href="#">
+                                <p class="tabtitle">야구 여행 후기</p>
+                                <p>경기를 넘어, 도시까지 함께 즐긴 <br> 야구 여행 루트를 확인해보세요</p>
+                            </a>
+                        </li>
+                        <li class="tab-item" data-tab="tips-reviews">
+                            <a href="#">
+                                <p class="tabtitle">입문자를 위한 직관 꿀팁</p>
+                                <p>처음 직관도 걱정 없이 즐길 수 있도록 <br> 유용한 정보와 노하우를 모아봤어요</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="reviewcontents">
+                        <section id="stadium-reviews" class="review-section active">
+                            <div class="review-layout">
+                                <div class="review-col col-left">
+                                    <div class="reviewcard" data-aos="fade-up" data-aos-delay="200">
+                                        <span class="citytag" style="background-color: #296EEE;">부산</span>
+                                        <p class="reviewtitle">사직 중앙상단석 56구역 후기</p>
+                                        <span>lo***e1004</span>
+                                        <span>2025.04.28</span>
+                                        <p class="reviewtext">사직은 진짜 응원 분위기가 미쳤어요🔥
+                                            중앙상단석이라 시야 걱정했는데 전체 흐름 보기에는 오히려 더 좋았습니다. 응원가 따라 부르다 보니까 처음 간 사람도 금방 적응돼요.
+                                        </p>
+                                        <img src="./images/main/8-review/review_img1.png" alt="사진">
+                                    </div>
+
+                                    <div class="reviewcard" data-aos="fade-up" data-aos-delay="400">
+                                        <span class="citytag" style="background-color: #44B197;">광주</span>
+                                        <p class="reviewtitle">광주 챔피언스필드 3루 내야석 후기</p>
+                                        <span>55cha***on</span>
+                                        <span>2025.05.01</span>
+                                        <p class="reviewtext">선수들 가까이 보고 싶으면 3루 쪽 추천! <br>파울볼 날아오는 구간이라 긴장감 있음ㅋㅋ <br> 경기
+                                            몰입도는 진짜
+                                            최고였어요.</p>
+                                        <img src="./images/main/8-review/review_img2.png" alt="사진">
+                                    </div>
+
+                                    <div class="reviewcard" data-aos="fade-up" data-aos-delay="600">
+                                        <span class="citytag" style="background-color: #8f0606;">서울</span>
+                                        <p class="reviewtitle">잠실 1루 테이블석 짱이에요</p>
+                                        <span>se***l1234</span>
+                                        <span>2025.04.30</span>
+                                        <p class="reviewtext">잠실은 진짜 응원 분위기가 미쳤어요🔥 <br>
+                                            탁자석이라 야구 푸드 먹기도 편하고, 응원가 따라 부르다 보니까 처음 간 사람도 금방 적응돼요.
+                                        </p>
+                                        <img src="./images/main/8-review/review_img6.png" alt="사진">
+                                    </div>
+                                </div>
+
+                                <div class="review-col col-right">
+                                    <div class="reviewcard" data-aos="fade-up" data-aos-delay="100">
+                                        <span class="citytag" style="background-color: #EF2A2A;">인천</span>
+                                        <p class="reviewtitle">야구 처음인데 인천 SSG 랜더스필드 추천</p>
+                                        <span>he***hero</span>
+                                        <span>2025.09.09</span>
+                                        <p class="reviewtext">시설 깔끔하고 먹거리 많아서 처음 직관하기 좋았어요! <br> 야구 잘 몰라도 충분히 재밌게 즐길 수
+                                            있는
+                                            분위기 👍
+                                            <br> 데이트 코스로 괜찮아요
+                                        </p>
+                                        <img src="./images/main/8-review/review_img3.png" alt="사진">
+                                    </div>
+                                    <div class="reviewcard" data-aos="fade-up" data-aos-delay="300">
+                                        <span class="citytag" style="background-color: #EE6E29;">대구</span>
+                                        <p class="reviewtitle">사직 중앙상단석 56구역 후기</p>
+                                        <span>ck***e3</span>
+                                        <span>2025.08.13</span>
+                                        <p class="reviewtext">야간 경기 꼭 보세요. <br>조명 + 분위기 + 관중 밀도까지 완벽합니다. <br> 좌석 간격도 넓어서
+                                            편하게
+                                            보기
+                                            좋았어요.</p>
+                                        <img src="./images/main//8-review/review_img4.png" alt="사진">
+                                    </div>
+                                    <div class="reviewcard" data-aos="fade-up" data-aos-delay="500">
+                                        <span class="citytag" style="background-color: #2B4A8F;">창원</span>
+                                        <p class="reviewtitle">창원 NC파크는 진짜 힐링형 구장</p>
+                                        <span>1w***321</span>
+                                        <span>2025.06.25</span>
+                                        <p class="reviewtext">사람 많지 않아서 여유롭게 보기 좋고 구장 디자인도 깔끔해서 사진 찍기 좋음📸 조용하게 즐기고 싶은
+                                            사람
+                                            추천!</p>
+                                        <img src="./images/main/8-review/review_img5.png" alt="사진">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section6 끝-->
+
+
+        <!-- section7 시작-->
+        <div id="section7">
+            <h1 data-aos="fade-down" data-aos-duration="1000">야구가 있는 날, <br> 당신의 여정을 시작하세요.</h1>
+            <a href="#" class="cta">시작하기</a>
+        </div>
+        <!-- section7 끝-->
+
+<!-- 로고슬라이드 -->
+        <div id="logoslide">
+            <div class="inner">
+                <div class="swiper-slide"><img src="images/main/9-logoslide/KT위즈.svg" alt="KT로고"></div>
+                <div class="swiper-slide"><img src="images/main/9-logoslide/LG트윈스.png" alt="LG로고"></div>
+                <div class="swiper-slide"><img src="images/main/9-logoslide/NC다이노스.png" alt="NC로고"></div>
+                <div class="swiper-slide"><img src="images/main/9-logoslide/SSG랜더스.png" alt="SSG로고"></div>
+                <div class="swiper-slide"><img src="images/main/9-logoslide/기아타이거즈.png" alt="기아로고"></div>
+                <div class="swiper-slide"><img src="images/main/9-logoslide/두산베어스.svg" alt="두산로고"></div>
+                <div class="swiper-slide"><img src="images/main/9-logoslide/롯데자이언츠.svg" alt="롯데로고"></div>
+                <div class="swiper-slide"><img src="images/main/9-logoslide/삼성라이온즈.svg" alt="삼성로고"></div>
+                <div class="swiper-slide"><img src="images/main/9-logoslide/키움히어로즈.svg" alt="키움로고"></div>
+                <div class="swiper-slide"><img src="images/main/9-logoslide/한화이글스.svg" alt="한화로고"></div>
+            </div>
+        </div>
+
+        <!-- footer 시작-->
+        <div id="footer">
+            <div class="inner_footer">
+                <h1 class="footerlogo"><img src="./images/main/10-footer/footer_logo.svg" alt="푸터로고"></h1>
+
+                <ul class="info">
+                    <li>(주)야구로드</li>
+                    <li><strong>대표이사</strong> &nbsp; 박신혜</li>
+                    <li><strong>주소</strong> &nbsp; 부산광역시 중구 중앙대로 26 다원중앙타워 빌딩 10층 </li>
+                    <li><strong>사업자등록번호</strong> &nbsp; 101-317-29725 </li>
+                    <li><strong>이메일</strong> &nbsp; yaguroad@gmail.com</li>
+                </ul>
+
+                <ul class="link">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">이메일무단수집거부</a></li>
+                    <li><a href="#">고객센터</a></li>
+                </ul>
+
+                <div class="call">
+                    <p>대표전화</p>
+                    <strong>051-245-1650</strong>
+                </div>
+
+                <ul class="sns">
+                    <li><a href="#"><img src="./images/main/10-footer/sns/instagram.svg" alt="인스타그램"></a></li>
+                    <li><a href="#"><img src="./images/main/10-footer/sns/kakaotalk.svg" alt="카카오톡"></a></li>
+                    <li><a href="#"><img src="./images/main/10-footer/sns/youtube.svg" alt="유튜브"></a></li>
+                </ul>
+
+                <p class="copyright">©COPYRIGHT 2026 YAGUROAD. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+        <!-- footer 끝-->
+    </div>
+
+
+    <!-- Top 버튼 -->
+    <button id="TopBtn" class="br-top-btn" aria-label="맨 위로 이동">
+        <img src="./images/main/top_btn.png" alt="정지" class="img-normal">
+    </button>
+
+
+    <!-- jQuery 오픈소스 -->
+    <script src="./js/jquery-4.0.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- js 파일 연결 -->
+    <script src="./js/script.js"></script>
+
+    <!-- AOS 적용 -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <!-- <script>
+        var swiper = new Swiper(".reviewcontents", {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            centeredSlides: false,
+            loop: true,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            speed: 5000,
+            allowTouchMove: true, // 사용자 드래그 허용 여부
+        });
+    </script> -->
+
+    <script>
+        var swiper = new Swiper(".logoslide", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            speed: 6000,
+        });
+    </script>
+</body>
+
+</html>

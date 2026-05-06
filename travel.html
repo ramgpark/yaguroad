@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1360">
+  <!-- 브라우저 뷰포트 너비를 1360px로 고정하여 페이지를 그리도록 설정 -->
+  <title>야구로드</title>
+
+  <!-- 웹폰트 연결 -->
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/isamanru.css">
+
+  <!-- aos 연결 -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- swiper 연결 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- 파비콘 연결 -->
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+
+  <!-- 외부 css 연결 -->
+  <link rel="stylesheet" href="css/travel_style.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <!-- header 시작-->
+    <div id="header">
+      <div class="inner_header">
+        <h1 class="logo">
+          <a href="index.html"><img src="./images/main/1-header/main_logo.svg" alt="메인로고"></a>
+        </h1>
+
+        <ul class="gnb">
+          <li><a href="index.html">BRAND</a></li>
+          <li><a href="travel.html" class="active">TRAVEL</a></li>
+          <li><a href="index.html">ARCHIVE</a></li>
+          <li><a href="shop.html">SHOP</a></li>
+          <li><a href="community.html">COMMUNITY</a></li>
+        </ul>
+
+        <ul class="util">
+          <li class="login" data-tooltip="마이페이지"><a href="#"><img src="./images/main/1-header/Profile.svg"
+                alt="로그인"></a>
+          </li>
+          <li class="join" data-tooltip="장바구니"><a href="#"><img src="./images/main/1-header/Cart.svg" alt="회원가입"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- header 끝-->
+
+    <!-- banner 시작 -->
+    <div id="banner">
+      <div class="text">
+        <h1>야구장을 따라 즐기는 도시 여행</h1>
+        <p>직관의 하루를 하나의 여행으로 만들어보세요</p>
+      </div>
+    </div>
+    <!-- banner 끝 -->
+
+    <!-- container 시작 -->
+    <!-- section1: 도시필터 -->
+    <div id="section1" class="section">
+      <ul class="city_filter">
+        <li class="city_item active">
+          <button type="button">
+            <span class="city_img">
+              <img src="./images/travel/city1.png" alt="부산">
+            </span>
+            <span class="city_name">대구</span>
+          </button>
+        </li>
+
+        <li class="city_item">
+          <button type="button">
+            <span class="city_img">
+              <img src="./images/travel/city2.png" alt="서울">
+            </span>
+            <span class="city_name">부산</span>
+          </button>
+        </li>
+
+        <li class="city_item">
+          <button type="button">
+            <span class="city_img">
+              <img src="./images/travel/city3.png" alt="서울">
+            </span>
+            <span class="city_name">서울</span>
+          </button>
+        </li>
+
+        <li class="city_item">
+          <button type="button">
+            <span class="city_img">
+              <img src="./images/travel/city4.png" alt="서울">
+            </span>
+            <span class="city_name">광주</span>
+          </button>
+        </li>
+
+        <li class="city_item">
+          <button type="button">
+            <span class="city_img">
+              <img src="./images/travel/city5.png" alt="서울">
+            </span>
+            <span class="city_name">대전</span>
+          </button>
+        </li>
+
+        <li class="city_item">
+          <button type="button">
+            <span class="city_img">
+              <img src="./images/travel/city6.png" alt="서울">
+            </span>
+            <span class="city_name">수원</span>
+          </button>
+        </li>
+
+        <li class="city_item">
+          <button type="button">
+            <span class="city_img">
+              <img src="./images/travel/city7.png" alt="서울">
+            </span>
+            <span class="city_name">창원</span>
+          </button>
+        </li>
+
+        <li class="city_item">
+          <button type="button">
+            <span class="city_img">
+              <img src="./images/travel/city8.png" alt="서울">
+            </span>
+            <span class="city_name">인천</span>
+          </button>
+        </li>
+      </ul>
+
+      <p class="city_text">"상단의 도시를 선택해 보세요. 당신을 기다리는 현지의 특별한 맛이 펼쳐집니다."</p>
+    </div>
+
+    <!-- section2: 인기맛집 -->
+    <div id="section2" class="section">
+      <div class="textbox">
+        <p class="title">인기 맛집</p>
+        <p class="sub_text">야구장 주변, 여행의 한 끼를 <br> 완성하는 맛집</p>
+      </div>
+
+      <div class="contentsbox">
+        <div class="card-list">
+          <!-- 카드 하나 시작 -->
+          <div class="card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/food1.png" alt="맛집 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>승리의 통닭</h3>
+              <div class="divider"></div>
+              <p class="description">
+                롯데 팬들이 많이 찾는 맛집!<br>
+                땡초 닭지리탕에는 술이 술술
+              </p>
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <a href="#" class="icon-link" title="지도 보기">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img">
+                </a>
+                <a href="#" class="icon-link" title="전화하기">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img">
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 하나 끝 -->
+
+
+          <!-- 카드 하나 시작 -->
+          <div class="card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/food1.png" alt="맛집 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>승리의 통닭</h3>
+              <div class="divider"></div>
+              <p class="description">
+                롯데 팬들이 많이 찾는 맛집!<br>
+                땡초 닭지리탕에는 술이 술술
+              </p>
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <a href="#" class="icon-link" title="지도 보기">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img">
+                </a>
+                <a href="#" class="icon-link" title="전화하기">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img">
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 하나 끝 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- section3: 인기카페 -->
+    <div id="section3" class="section">
+      <div class="textbox">
+        <p class="title">인기 카페</p>
+        <p class="sub_text">경기 전후로 쉬어가기 <br> 좋은 감성 카페</p>
+      </div>
+    </div>
+    <!-- container 끝 -->
+
+
+    <!-- footer 시작-->
+    <div id="footer">
+      <div class="inner_footer">
+        <h1 class="footerlogo"><img src="./images/main/10-footer/footer_logo.svg" alt="푸터로고"></h1>
+
+        <ul class="info">
+          <li>(주)야구로드</li>
+          <li><strong>대표이사</strong> &nbsp; 박신혜</li>
+          <li><strong>주소</strong> &nbsp; 부산광역시 중구 중앙대로 26 다원중앙타워 빌딩 10층 </li>
+          <li><strong>사업자등록번호</strong> &nbsp; 101-317-29725 </li>
+          <li><strong>이메일</strong> &nbsp; yaguroad@gmail.com</li>
+        </ul>
+
+        <ul class="link">
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이메일무단수집거부</a></li>
+          <li><a href="#">고객센터</a></li>
+        </ul>
+
+        <div class="call">
+          <p>대표전화</p>
+          <strong>051-245-1650</strong>
+        </div>
+
+        <ul class="sns">
+          <li><a href="#"><img src="./images/main/10-footer/sns/instagram.svg" alt="인스타그램"></a></li>
+          <li><a href="#"><img src="./images/main/10-footer/sns/kakaotalk.svg" alt="카카오톡"></a></li>
+          <li><a href="#"><img src="./images/main/10-footer/sns/youtube.svg" alt="유튜브"></a></li>
+        </ul>
+
+        <p class="copyright">©COPYRIGHT 2026 YAGUROAD. ALL RIGHTS RESERVED.</p>
+      </div>
+    </div>
+    <!-- footer 끝-->
+  </div>
+
+
+  <!-- Top 버튼 -->
+  <button id="TopBtn" class="br-top-btn" aria-label="맨 위로 이동">
+    <img src="./images/main/top_btn.png" alt="top버튼">
+  </button>
+
+  ---------------------------------------------------------------
+  <!-- jQuery 오픈소스 -->
+  <script src="./js/jquery-4.0.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- js 파일 연결 -->
+  <script src="./js/script.js"></script>
+
+  <!-- AOS 적용 -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <script>
+    const cityItems = document.querySelectorAll(".city_item");
+
+    cityItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        cityItems.forEach((el) => el.classList.remove("active"));
+        item.classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+
+</html>
