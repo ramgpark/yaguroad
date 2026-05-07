@@ -327,10 +327,10 @@ $(document).ready(function () {
             desc: "야구의 심장부에서 <br> 즐기는 뜨거운 더비",
             stname: "#잠실야구장 #스카이돔",
             tmname: "#LG트윈스 #두산베어스 #키움히어로즈",
-            bgMain: "./images/main/5-city/seoul.png",
-            bgFood: "./images/main/5-city/seoul1-food.png",
-            bgCafe: "./images/main/5-city/seoul2-cafe.png",
-            bgCourse: "./images/main/5-city/seoul3-course.png"
+            bgMain: "./images/main/5-city/gwangju.png",
+            bgFood: "./images/main/5-city/gwangju1-food.png",
+            bgCafe: "./images/main/5-city/gwangju2-cafe.png",
+            bgCourse: "./images/main/5-city/gwangju3-course.png"
         },
 
         incheon: {
@@ -338,10 +338,10 @@ $(document).ready(function () {
             desc: "바다를 건너 <br> 랜더스의 땅으로",
             stname: "#SSG랜더스필드",
             tmname: "#SSG랜더스",
-            bgMain: "./images/main/5-city/incheon.png",
-            bgFood: "./images/main/5-city/incheon1-food.png",
-            bgCafe: "./images/main/5-city/incheon2-cafe.png",
-            bgCourse: "./images/main/5-city/incheon3-course.png"
+            bgMain: "./images/main/5-city/daegu.png",
+            bgFood: "./images/main/5-city/daegu1-food.png",
+            bgCafe: "./images/main/5-city/daegu2-cafe.png",
+            bgCourse: "./images/main/5-city/daegu3-course.png"
         },
 
         suwon: {
@@ -349,10 +349,10 @@ $(document).ready(function () {
             desc: "수원 화성과 <br> 마법 같은 야구의 밤",
             stname: "#KT위즈파크",
             tmname: "#KT위즈",
-            bgMain: "./images/main/5-city/suwon.png",
-            bgFood: "./images/main/5-city/suwon1-food.png",
-            bgCafe: "./images/main/5-city/suwon2-cafe.png",
-            bgCourse: "./images/main/5-city/suwon3-course.png"
+            bgMain: "./images/main/5-city/daejeon.png",
+            bgFood: "./images/main/5-city/daejeon1-food.png",
+            bgCafe: "./images/main/5-city/daejeon2-cafe.png",
+            bgCourse: "./images/main/5-city/daejeon3-course.png"
         },
 
         changwon: {
@@ -360,10 +360,10 @@ $(document).ready(function () {
             desc: "메이저리그급 구장에서 <br> 만나는 새로운 여정",
             stname: "#NC파크",
             tmname: "#NC다이노스",
-            bgMain: "./images/main/5-city/changwon.png",
-            bgFood: "./images/main/5-city/changwon1-food.png",
-            bgCafe: "./images/main/5-city/changwon2-cafe.png",
-            bgCourse: "./images/main/5-city/changwon3-course.png"
+            bgMain: "./images/main/5-city/busan.png",
+            bgFood: "./images/main/5-city/busan1-food.png",
+            bgCafe: "./images/main/5-city/busan2-cafe.png",
+            bgCourse: "./images/main/5-city/busan3-course.png"
         }
     };
 
@@ -431,26 +431,54 @@ $(document).ready(function () {
             },
         }
     });
-    
+
+    // 굿즈 탭 클릭 이벤트
+    const swiperInstances = {};
+
+    function createSwiper(id, el) {
+        swiperInstances[id] = new Swiper(el, {
+            slidesPerView: 3,
+            centeredSlides: true,
+            loop: true,
+            observer: true,
+            observeParents: true,
+            navigation: {
+                nextEl: $(el).siblings('.swiper-button-next')[0],
+                prevEl: $(el).siblings('.swiper-button-prev')[0],
+            },
+            pagination: {
+                el: $(el).siblings('.swiper-pagination')[0],
+                clickable: true,
+            }
+        });
+    }
+
+    // 각 탭별 Swiper 생
+    createSwiper('fashion', '.fashion-swiper');
+    createSwiper('record', '.record-swiper');
+    createSwiper('collect', '.collect-swiper');
+
     // 굿즈 탭 클릭 이벤트
     $(".goodstab li a").click(function (e) {
         e.preventDefault();
+
         $(".goodstab li a").removeClass("active");
         $(this).addClass("active");
 
         const targetTab = $(this).data("tab");
-        $(".goodsinfo").hide().removeClass("active");
-        $("#" + targetTab).show();
-
-        const swipers = [swiper1, swiper2, swiper3];
-        swipers.forEach(function(instance) {
-            if ($(instance.el).closest('.goodsinfo').hasClass('active')) {
-                instance.update();      
-                instance.loopFix(); 
-                instance.slideToLoop(0, 0); 
-            }
-        });
         
+        $(".goodsinfo").hide().removeClass("active");
+        $("#" + targetTab).show().addClass("active"); 
+
+        const activeSwiper = swiperInstances[targetTab];
+        if (activeSwiper) {
+            setTimeout(function() {
+                activeSwiper.update();
+                activeSwiper.loopFix();
+                activeSwiper.slideToLoop(0, 0);
+            }, 10);
+        }
+
         AOS.refresh();
     });
 
@@ -459,29 +487,43 @@ $(document).ready(function () {
 
     /* Section 6 - Community -------------------------------------------- */
     // 후기 탭 클릭 이벤트
-    $(".tab-item").click(function (e) {
+    $(".reviewtab li a").on('click', function (e) {
+        // 1. 어떤 에러가 나더라도 일단 튕기는 것부터 막습니다.
         e.preventDefault();
-        $(".tab-item").removeClass("active");
+        e.stopPropagation();
+
+        $(".reviewtab li a").removeClass("active");
         $(this).addClass("active");
-        
+
         const tabId = $(this).attr('data-tab');
-        $('.reviewcontents section').hide().removeClass('active');
-        $('#' + tabId).fadeIn(400).addClass('active');
+
+        // 2. 섹션 전환
+        $('.review-section').hide().removeClass('active');
+
+        // 해당 탭이 있는지 확인 후 노출
+        if ($('#' + tabId).length > 0) {
+            $('#' + tabId).stop().fadeIn(400).addClass('active');
+        }
+
+        // 3. swiper1 에러 방지 처리 (Try-Catch 문으로 감싸기)
+        try {
+            if (typeof swiper1 !== 'undefined' && swiper1 !== null) {
+                swiper1.update();
+            }
+        } catch (err) {
+            console.warn("Swiper update skipped:", err);
+        }
+
+        // 4. AOS 에러 방지 처리
+        try {
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        } catch (err) {
+            console.warn("AOS refresh skipped:", err);
+        }
     });
 
-    // 리뷰 Swiper 슬라이드
-    /*var swiper = new Swiper(".reviewcontents", {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        centeredSlides: false,
-        loop: true,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-        },
-        speed: 5000,
-        allowTouchMove: true, // 사용자 드래그 허용 여부
-    });*/
 
 
     /* 구단 로고 Swiper 슬라이드 ------------------------------- */
