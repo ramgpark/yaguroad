@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- swiper 연결 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 
   <!-- 파비콘 연결 -->
   <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
@@ -36,9 +36,9 @@
         </h1>
 
         <ul class="gnb">
-          <li><a href="index.html">BRAND</a></li>
+          <li><a href="brand.html">BRAND</a></li>
           <li><a href="travel.html" class="active">TRAVEL</a></li>
-          <li><a href="index.html">ARCHIVE</a></li>
+          <li><a href="archive.html">ARCHIVE</a></li>
           <li><a href="shop.html">SHOP</a></li>
           <li><a href="community.html">COMMUNITY</a></li>
         </ul>
@@ -66,22 +66,24 @@
     <!-- container 시작 -->
     <!-- section1: 도시필터 -->
     <div id="section1" class="section">
+      <p class="guide_text">
+      "도시를 선택해 보세요. 당신을 기다리는 현지의 특별한 맛이 펼쳐집니다."</p>
       <ul class="city_filter">
         <li class="city_item active">
           <button type="button">
             <span class="city_img">
-              <img src="./images/travel/city1.png" alt="부산">
+              <img src="./images/travel/city2.png" alt="서울">
             </span>
-            <span class="city_name">대구</span>
+            <span class="city_name">부산</span>
           </button>
         </li>
 
         <li class="city_item">
           <button type="button">
             <span class="city_img">
-              <img src="./images/travel/city2.png" alt="서울">
+              <img src="./images/travel/city1.png" alt="부산">
             </span>
-            <span class="city_name">부산</span>
+            <span class="city_name">대구</span>
           </button>
         </li>
 
@@ -140,20 +142,20 @@
         </li>
       </ul>
 
-      <p class="city_text">"상단의 도시를 선택해 보세요. 당신을 기다리는 현지의 특별한 맛이 펼쳐집니다."</p>
+
     </div>
 
     <!-- section2: 인기맛집 -->
     <div id="section2" class="section">
-      <div class="textbox">
+      <div class="textbox" data-aos="fade-down" data-aos-duration="1000">
         <p class="title">인기 맛집</p>
         <p class="sub_text">야구장 주변, 여행의 한 끼를 <br> 완성하는 맛집</p>
       </div>
 
-      <div class="contentsbox">
-        <div class="card-list">
-          <!-- 카드 하나 시작 -->
-          <div class="card">
+      <div class="swiper contentsbox" data-aos="fade-right" data-aos-duration="1000">
+        <div class="swiper-wrapper card-list">
+          <!-- 카드 1 -->
+          <div class="swiper-slide card">
             <!-- 1. 이미지 박스 -->
             <div class="img-box">
               <img src="./images/travel/food1.png" alt="맛집 이미지">
@@ -164,25 +166,128 @@
               <h3>승리의 통닭</h3>
               <div class="divider"></div>
               <p class="description">
-                롯데 팬들이 많이 찾는 맛집!<br>
-                땡초 닭지리탕에는 술이 술술
+                사직야구장 직관 뒷풀이 맛집 <br>
+                롯데가 이긴 날엔 승리의 통닭으로!
               </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
               <!-- 아이콘 영역 -->
               <div class="action-area">
-                <a href="#" class="icon-link" title="지도 보기">
-                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img">
-                </a>
-                <a href="#" class="icon-link" title="전화하기">
-                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img">
-                </a>
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_blue.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_blue.png" alt="전화" class="icon-img hover">
+                </div>
               </div>
             </div>
           </div>
-          <!-- 카드 하나 끝 -->
+          <!-- 카드 1 -->
 
 
-          <!-- 카드 하나 시작 -->
-          <div class="card">
+          <!-- 카드 2 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/food2.png" alt="맛집 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>주문진 막국수</h3>
+              <div class="divider"></div>
+              <p class="description">
+                언제 먹어도 맛있는 수육 보쌈과 <br>
+                시원한 육수가 일품인 막국수 맛집
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_blue.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_blue.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 2 -->
+
+          <!-- 카드 3 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/food3.png" alt="맛집 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>후발대</h3>
+              <div class="divider"></div>
+              <p class="description">
+                롯데자이언츠 선수 PICK! <br>
+                속이 꽉 찬 양대창과 삼겹살 맛집
+
+              </p>
+              <p class="hashtag">#부산진구 #부전동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_blue.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_blue.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 3 -->
+
+          <!-- 카드 4 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/food4.png" alt="맛집 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>금강 만두</h3>
+              <div class="divider"></div>
+              <p class="description">
+                푸짐한 육개장과 충무김밥 맛집 <br>
+                직관 전 편하게 즐길 수 있어요!
+
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_blue.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_blue.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 4 -->
+
+
+          <!-- 카드 1 -->
+          <div class="swiper-slide card">
             <!-- 1. 이미지 박스 -->
             <div class="img-box">
               <img src="./images/travel/food1.png" alt="맛집 이미지">
@@ -193,31 +298,401 @@
               <h3>승리의 통닭</h3>
               <div class="divider"></div>
               <p class="description">
-                롯데 팬들이 많이 찾는 맛집!<br>
-                땡초 닭지리탕에는 술이 술술
+                사직야구장 직관 뒷풀이 맛집 <br>
+                롯데가 이긴 날엔 승리의 통닭으로!
               </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
               <!-- 아이콘 영역 -->
               <div class="action-area">
-                <a href="#" class="icon-link" title="지도 보기">
-                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img">
-                </a>
-                <a href="#" class="icon-link" title="전화하기">
-                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img">
-                </a>
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_blue.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_blue.png" alt="전화" class="icon-img hover">
+                </div>
               </div>
             </div>
           </div>
-          <!-- 카드 하나 끝 -->
+          <!-- 카드 1 -->
+
+
+          <!-- 카드 2 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/food2.png" alt="맛집 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>주문진 막국수</h3>
+              <div class="divider"></div>
+              <p class="description">
+                언제 먹어도 맛있는 수육 보쌈과 <br>
+                시원한 육수가 일품인 막국수 맛집
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_blue.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_blue.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 2 -->
+
+          <!-- 카드 3 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/food3.png" alt="맛집 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>후발대</h3>
+              <div class="divider"></div>
+              <p class="description">
+                롯데자이언츠 선수 PICK! <br>
+                속이 꽉 찬 양대창과 삼겹살 맛집
+
+              </p>
+              <p class="hashtag">#부산진구 #부전동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_blue.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_blue.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 3 -->
+
+          <!-- 카드 4 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/food4.png" alt="맛집 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>금강 만두</h3>
+              <div class="divider"></div>
+              <p class="description">
+                푸짐한 육개장과 충무김밥 맛집 <br>
+                직관 전 편하게 즐길 수 있어요!
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_blue.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_blue.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 4 -->
         </div>
+
+        <div class="swiper-scrollbar"></div>
       </div>
     </div>
 
     <!-- section3: 인기카페 -->
     <div id="section3" class="section">
-      <div class="textbox">
+      <div class="textbox" data-aos="fade-down" data-aos-duration="1000">
         <p class="title">인기 카페</p>
         <p class="sub_text">경기 전후로 쉬어가기 <br> 좋은 감성 카페</p>
       </div>
+      <div class="swiper contentsbox" data-aos="fade-right" data-aos-duration="1000">
+        <div class="swiper-wrapper card-list">
+          <!-- 카드 1 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/cafe1.png" alt="카페 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>카페 히타로</h3>
+              <div class="divider"></div>
+              <p class="description">
+                일본 큐슈의 작은 마을 히타를 <br>
+                모티브로 한 고즈넉한 일본 가옥 카페
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_orange.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_orange.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 1 -->
+
+
+          <!-- 카드 2 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/cafe2.png" alt="카페 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>마주(Maju)</h3>
+              <div class="divider"></div>
+              <p class="description">
+                사직동 빵지순례 필수 코스! <br>
+                분위기 좋은 레트로 감성 카페
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_orange.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_orange.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 2 -->
+
+          <!-- 카드 3 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/cafe3.png" alt="카페 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>버즈비</h3>
+              <div class="divider"></div>
+              <p class="description">
+                아늑한 분위기와 함께 맛있는 <br>
+                수제 케이크가 가득한 감성 카페
+
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_orange.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_orange.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 3 -->
+
+          <!-- 카드 4 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/cafe4.png" alt="카페 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>스탠브루</h3>
+              <div class="divider"></div>
+              <p class="description">
+                드립 커피와 수제 티라미수가 <br> 있는 따끈따끈한 신상카페
+
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_orange.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_orange.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 4 -->
+           
+          <!-- 카드 1 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/cafe1.png" alt="카페 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>카페 히타로</h3>
+              <div class="divider"></div>
+              <p class="description">
+                일본 큐슈의 작은 마을 히타를 <br>
+                모티브로 한 고즈넉한 일본 가옥 카페
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_orange.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_orange.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 1 -->
+
+
+          <!-- 카드 2 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/cafe2.png" alt="카페 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>마주(Maju)</h3>
+              <div class="divider"></div>
+              <p class="description">
+                사직동 빵지순례 필수 코스! <br>
+                분위기 좋은 레트로 감성 카페
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_orange.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_orange.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 2 -->
+
+          <!-- 카드 3 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/cafe3.png" alt="카페 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>버즈비</h3>
+              <div class="divider"></div>
+              <p class="description">
+                아늑한 분위기와 함께 맛있는 <br>
+                수제 케이크가 가득한 감성 카페
+
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_orange.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_orange.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 3 -->
+
+          <!-- 카드 4 -->
+          <div class="swiper-slide card">
+            <!-- 1. 이미지 박스 -->
+            <div class="img-box">
+              <img src="./images/travel/cafe4.png" alt="카페 이미지">
+            </div>
+
+            <!-- 2. 정보 박스 -->
+            <div class="info-box">
+              <h3>스탠브루</h3>
+              <div class="divider"></div>
+              <p class="description">
+                드립 커피와 수제 티라미수가 <br> 있는 따끈따끈한 신상카페
+
+              </p>
+              <p class="hashtag">#동래구 #사직동</p>
+
+              <!-- 아이콘 영역 -->
+              <div class="action-area">
+                <div class="icon-wrap">
+                  <img src="./images/travel/placeholder.png" alt="지도" class="icon-img default">
+                  <img src="./images/travel/placeholder_orange.png" alt="지도" class="icon-img hover">
+                </div>
+                <div class="icon-wrap">
+                  <img src="./images/travel/phone-call.png" alt="전화" class="icon-img default">
+                  <img src="./images/travel/phone-call_orange.png" alt="전화" class="icon-img hover">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 카드 4 -->
+        </div>
+
+        <div class="swiper-scrollbar"></div>
+      </div>
+
     </div>
     <!-- container 끝 -->
 
@@ -265,7 +740,7 @@
     <img src="./images/main/top_btn.png" alt="top버튼">
   </button>
 
-  ---------------------------------------------------------------
+  
   <!-- jQuery 오픈소스 -->
   <script src="./js/jquery-4.0.0.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -276,20 +751,42 @@
   <!-- AOS 적용 -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+      duration: 1000,
+      once: false, // 애니메이션이 여러 번 실행될 수 있도록 false 설정
+    });
   </script>
 
   <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
   <script>
-    const cityItems = document.querySelectorAll(".city_item");
+    //도시 필터
+    $('.city_item').click(function () {
+      // 1. 활성화 표시
+      $('.city_item').removeClass('active');
+      $(this).addClass('active');
 
-    cityItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        cityItems.forEach((el) => el.classList.remove("active"));
-        item.classList.add("active");
-      });
+      // 2. 카드 리스트 애니메이션 효과
+      // 현재 슬라이더를 숨겼다가(hide) 부드럽게 다시 보여줌(fadeIn)
+      $('#section2').hide().fadeIn(800);
+
+      return false; // 링크 이동 방지
+    });
+
+
+    //인기 맛집, 인기 카페 스크롤바
+    var swiper = new Swiper(".contentsbox", {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: false,
+        draggable: true,
+        snapOnRelease: true,
+        dragSize: 500,
+      },
     });
   </script>
 

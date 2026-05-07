@@ -36,9 +36,9 @@
         </h1>
 
         <ul class="gnb">
-          <li><a href="index.html">BRAND</a></li>
+          <li><a href="brand.html">BRAND</a></li>
           <li><a href="travel.html">TRAVEL</a></li>
-          <li><a href="index.html">ARCHIVE</a></li>
+          <li><a href="archive.html">ARCHIVE</a></li>
           <li><a href="shop.html" class="active">SHOP</a></li>
           <li><a href="community.html">COMMUNITY</a></li>
         </ul>
@@ -163,8 +163,19 @@
     </div>
   </div>
 
-  <div class="sub_banner">
-    <a href="#" class="detail">자세히 보기</a>
+  <div class="swiper banner-wrap">
+    <div class="swiper-wrapper sub_banner">
+      <div class="swiper-slide">
+        <img src="./images/shop/shop_sub_banner1.png" alt="배너 1">
+        <a href="#" class="detail1">자세히 보기</a>
+      </div>
+      <div class="swiper-slide">
+        <img src="./images/shop/shop_sub_banner2.png" alt="배너 2">
+        <a href="#" class="detail2">자세히 보기</a>
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
   </div>
 
   <div class="section" data-aos="fade-up" data-aos-duration="2000">
@@ -415,6 +426,25 @@
     });
 
     updateCount();
+
+    //배너 슬라이드 좌우이동 --------------------------------------------
+    const swiper = new Swiper('.banner-wrap', {
+      spaceBetween: 0,
+
+      loop: true, // 무한 루프
+      autoplay: {
+        delay: 3000, // 4초마다 자동 재생
+        disableOnInteraction: false, // 사용자가 조작해도 자동 재생 유지
+      },
+      observer: true,
+      observeParents: true,
+      speed: 1000,
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
   </script>
 </body>
 
