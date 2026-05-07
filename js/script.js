@@ -1,130 +1,105 @@
-// gnb 메뉴 변경 -----------------------------------------------
+/**
+ * MAIN PAGE JAVASCRIPT
+ * ---------------------------------------------------
+ * 1. Header (GNB & Scroll)
+ * 2. Visual (Banner Slide & Typing)
+ * 3. Section1 - Brand
+ * 4. Section2 - Stadium Map
+ * 5. Section3 - City
+ * 6. Section4 - Archive
+ * 7. Section5 - Goods
+ * 8. Section6 - Review
+ * 9. Section7 - CTA
+ * 10. Top Button
+ */
+
 $(document).ready(function () {
-    // 1. 현재 페이지의 URL 경로를 가져옵니다.
-    var currentPath = window.location.pathname;
 
-    // 2. GNB의 모든 링크를 확인하며 현재 경로와 일치하는 것을 찾습니다.
+    /* Header ----------------------------------------------------------- */
+    //GNB 제어
+    const currentPath = window.location.pathname;
+
+    // 현재 페이지 활성화
     $(".gnb a").each(function () {
-        var href = $(this).attr("href");
-
-        // 현재 경로에 해당 href가 포함되어 있다면 active 클래스 추가
+        const href = $(this).attr("href");
         if (currentPath.indexOf(href) !== -1 && href !== "#") {
             $(this).addClass("active");
         }
     });
-});
 
-$(document).ready(function () {
     $(".gnb li a").click(function (e) {
-        // 내부 링크(#)일 경우에만 작동
+        // active 클래스 변경
+        $(".gnb li a").removeClass("active");
+        $(this).addClass("active");
+
+        // 내부 해시 링크 이동
         if (this.hash !== "") {
             e.preventDefault();
-            var hash = this.hash;
-
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top - 90 // 90은 헤더 높이만큼 덜 가기 위한 수치
+            const hash = this.hash;
+            $('html, body').stop().animate({
+                scrollTop: $(hash).offset().top - 90
             }, 800);
         }
     });
-});
-
-$(document).ready(function () {
-    $(".gnb li a").click(function () {
-        // 1. 모든 핀의 active 클래스 제거
-        $(".gnb li a").removeClass("active");
-
-        // 2. 클릭한 핀에만 active 클래스 추가 (색상 변경)
-        $(this).addClass("active");
-    });
-});
 
 
-//배너 슬라이드 좌우이동 --------------------------------------------
-var currentIndex = 0;
-var slideCount = 3;
+    /* Visual ----------------------------------------------------------- */
+    //배너 슬라이드
+    let currentIndex = 0;
+    const slideCount = 3;
 
-function moveSlide() {
-    currentIndex++;
+    function moveSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        $(".banner").stop().animate({
+            marginLeft: (currentIndex * -100) + "vw"
+        }, 500);
+    }
+    setInterval(moveSlide, 4000);
 
-    if (currentIndex >= slideCount) {
-        currentIndex = 0;
+
+    // 타이핑 효과
+    const typingTxt1 = "야구가 있는 날, 도시를 걷다";
+    const typingTxt2 = "Walk the City on Game Day";
+    const $line1 = $(".typing1");
+    const $line2 = $(".typing2");
+    let typingIdx1 = 0;
+    let typingIdx2 = 0;
+
+    function typeLine1() {
+        $line1.addClass("cursor");
+        if (typingIdx1 < typingTxt1.length) {
+            $line1.append(typingTxt1[typingIdx1++]);
+            setTimeout(typeLine1, 100);
+        } else {
+            $line1.removeClass("cursor");
+            setTimeout(typeLine2, 300);
+        }
     }
 
-    // 100%씩 이동하면 배율 깨짐 없이 딱딱 맞게 이동합니다.
-    $(".banner").animate({
-        marginLeft: (currentIndex * -100) + "vw"
-    }, 500);
-}
-
-// 4초마다 슬라이드 이동 (타이핑 시간 고려해서 넉넉하게)
-setInterval(moveSlide, 4000);
-
-
-//typing 제어구문---------------------------------------------------
-var typingIdx1 = 0;
-var typingIdx2 = 0;
-var typingTxt1 = "야구가 있는 날, 도시를 걷다"; // 첫 줄
-var typingTxt2 = "Walk the City on Game Day"; // 둘째 줄
-
-// 반복을 위해 텍스트를 담는 그릇을 변수로 지정
-var $line1 = $(".typing1");
-var $line2 = $(".typing2");
-
-// 첫 번째 줄 타이핑 함수
-function typeLine1() {
-
-    // 첫 줄 시작할 때 커서 추가
-    $line1.addClass("cursor");
-
-    if (typingIdx1 < typingTxt1.length) {
-        $line1.append(typingTxt1[typingIdx1]);
-        typingIdx1++;
-        setTimeout(typeLine1, 100);
-    } else {
-        // 첫 줄 끝나고 커서 제거, 0.3초 뒤 둘째 줄 시작
-        $line1.removeClass("cursor");
-        setTimeout(typeLine2, 300);
+    function typeLine2() {
+        $line2.addClass("cursor");
+        if (typingIdx2 < typingTxt2.length) {
+            $line2.append(typingTxt2[typingIdx2++]);
+            setTimeout(typeLine2, 100);
+        } else {
+            setTimeout(resetAndRestart, 3000);
+        }
     }
-}
 
-// 두 번째 줄 타이핑 함수
-function typeLine2() {
-    // 두 번째 줄 시작할 때 커서 추가
-    $line2.addClass("cursor");
-
-    if (typingIdx2 < typingTxt2.length) {
-        $line2.append(typingTxt2[typingIdx2]);
-        typingIdx2++;
-        setTimeout(typeLine2, 100);
-    } else {
-        // [중요] 두 번째 줄까지 모두 끝나면 3초 쉬었다가 다시 시작
-        setTimeout(resetAndRestart, 3000);
+    function resetAndRestart() {
+        typingIdx1 = 0;
+        typingIdx2 = 0;
+        $line1.html("");
+        $line2.html("");
+        $line2.removeClass("cursor");
+        typeLine1();
     }
-}
-
-function resetAndRestart() {
-    // 1. 인덱스 초기화
-    typingIdx1 = 0;
-    typingIdx2 = 0;
-
-    // 2. 화면에 써진 글자 지우기
-    $line1.html("");
-    $line2.html("");
-
-    // 3. 다시 첫 번째 줄부터 시작
-    // 다시 시작할 때 두 번째 줄 커서 확실히 제거
-    $line2.removeClass("cursor");
-    typeLine1();
-}
-
-// 최초 실행
-typeLine1();
+    typeLine1(); // 최초 실행
 
 
-// Section 2 - STADIUM MAP
 
-$(document).ready(function () {
-    // 1. 구장 데이터 정의 
+    /* Section 2 - STADIUM MAP -------------------------------------------- */
+    // 구장 데이터 정의
     const stadiumData = {
         "samsung": {
             name: "대구삼성라이온즈 파크",
@@ -133,8 +108,11 @@ $(document).ready(function () {
             date: "2026.04.07(화) 18:30",
             match: "LG VS 삼성",
             tags: ["#홈런공장", "#캠핑존", "#블루존", "#주말은빠르게매진"],
-            img: "./images/main/4-stadium/samsung1.png"
+            img: "./images/main/4-stadium/stadium_samsung.png",
+            mapImg: "./images/main/4-stadium/map_samsung.png",
+            ticketUrl: "https://www.samsunglions.com/"
         },
+
         "lotte": {
             name: "부산 사직 야구장",
             location: "부산 동래구 사직로 45",
@@ -142,8 +120,11 @@ $(document).ready(function () {
             date: "2026.04.07(화) 18:30",
             match: "키움 VS 롯데",
             tags: ["#사직노래방", "#파도타기", "#응원탁자석", "#야구푸드"],
-            img: "./images/main/4-stadium/lotte1.png"
+            img: "./images/main/4-stadium/stadium_lotte.png",
+            mapImg: "./images/main/4-stadium/map_lotte.png",
+            ticketUrl: "https://www.giantsclub.com/html/"
         },
+
         "lg": {
             name: "서울 잠실 야구장",
             location: "서울특별시 송파구 올림픽로 25",
@@ -151,8 +132,11 @@ $(document).ready(function () {
             date: "2026.04.07(화) 18:30",
             match: "두산 VS LG",
             tags: ["#잠실더비", "#무적LG", "#최강먹산", "#잠실원정"],
-            img: "./images/main/4-stadium/lg1.png"
+            img: "./images/main/4-stadium/stadium_lg.png",
+            mapImg: "./images/main/4-stadium/map_.png",
+            ticketUrl: "https://www.lgtwins.com/main"
         },
+
         "ssg": {
             name: "인천 SSG 랜더스필드",
             location: "인천광역시 미추홀구 매소홀로 618",
@@ -160,8 +144,11 @@ $(document).ready(function () {
             date: "2026.04.07(화) 18:30",
             match: "한화 VS SSG",
             tags: ["#스타벅스데이", "#크림새우", "#바베큐존", "#인천야구"],
-            img: "./images/main/4-stadium/ssg1.png"
+            img: "./images/main/4-stadium/stadium_ssg.png",
+            mapImg: "./images/main/4-stadium/map_.png",
+            ticketUrl: "https://ticket.ssg.com/ticket"
         },
+
         "kiwoom": {
             name: "고척 스카이돔",
             location: "서울특별시 구로구 경인로 430",
@@ -169,8 +156,11 @@ $(document).ready(function () {
             date: "2026.04.07(화) 18:30",
             match: "롯데 VS 키움",
             tags: ["#에어컨빵빵", "#돔구장", "#영웅군단", "#서울투어"],
-            img: "./images/main/4-stadium/kiwoom1.png"
+            img: "./images/main/4-stadium/stadium_kiwoom.png",
+            mapImg: "./images/main/4-stadium/map_.png",
+            ticketUrl: "https://heroesbaseball.co.kr/index.do"
         },
+
         "kt": {
             name: "수원 KT 위즈파크",
             location: "경기도 수원시 장안구 경수대로 893",
@@ -178,17 +168,23 @@ $(document).ready(function () {
             date: "2026.04.07(화) 18:30",
             match: "NC VS KT",
             tags: ["#진미통닭", "#보영만두", "#워터페스티벌", "#마법사들"],
-            img: "./images/main/4-stadium/kt1.png"
+            img: "./images/main/4-stadium/stadium_kt.png",
+            mapImg: "./images/main/4-stadium/map_.png",
+            ticketUrl: "https://www.ktwiz.co.kr/"
         },
+
         "hanwha": {
             name: "한화생명 이글스파크",
             location: "대전광역시 중구 대종로 373",
             parking: "구장 내부 및 인근 부사동 공영주차장",
             date: "2026.04.07(화) 18:30",
             match: "롯데 VS 한화",
-            tags: ["#보문산호랭이", "#조류동맹", "#대전의자부심", "#직관필수"],
-            img: "./images/main/4-stadium/hanwha1.png"
+            tags: ["#독수리군단", "#조류동맹", "#빙그레", "#직관필수"],
+            img: "./images/main/4-stadium/stadium_hanwha.png",
+            mapImg: "./images/main/4-stadium/map_hanwha.png",
+            ticketUrl: "https://www.hanwhaeagles.co.kr/index.do"
         },
+
         "kia": {
             name: "광주 기아 챔피언스 필드",
             location: "광주광역시 북구 서림로 10",
@@ -196,8 +192,11 @@ $(document).ready(function () {
             date: "2026.04.07(화) 18:30",
             match: "두산 VS 기아",
             tags: ["#타이거즈", "#호걸이", "#직관뷰맛집", "#광주여행"],
-            img: "./images/main/4-stadium/kia1.png"
+            img: "./images/main/4-stadium/stadium_kia.png",
+            mapImg: "./images/main/4-stadium/map_kia.png",
+            ticketUrl: "https://tigers.co.kr/"
         },
+
         "nc": {
             name: "창원 NC 파크",
             location: "경상남도 창원시 마산회원구 삼호로 63",
@@ -205,162 +204,311 @@ $(document).ready(function () {
             date: "2026.04.07(화) 18:30",
             match: "KT VS NC",
             tags: ["#메이저리그급", "#공룡군단", "#엔팍", "#창원산책"],
-            img: "./images/main/4-stadium/nc1.png"
+            img: "./images/main/4-stadium/stadium_nc.png",
+            mapImg: "./images/main/4-stadium/map_nc.png",
+            ticketUrl: "https://www.ncdinos.com/"
         }
     };
 
-    // 팀 키값들을 배열로 추출 (순서 제어용)
     const teamKeys = Object.keys(stadiumData);
     let currentTeam = "samsung";
 
-    // 2. 화면 업데이트 함수
+    //콘텐츠 업데이트 함수
     function updateContent(team) {
         const data = stadiumData[team];
         if (!data) return;
 
         const $info = $(".stadiuminfo");
+        $(".base-map").attr("src", data.mapImg);
 
-        // 부드러운 전환을 위해 컨텐츠박스만 살짝 fade
         $(".contentsbox").stop().fadeOut(200, function () {
             $info.find("h2").text(data.name);
             $info.find(".location .text").text(data.location);
             $info.find(".parking .text").text(data.parking);
             $info.find(".schedule .text strong").html(data.match);
             $info.find(".imgbox img").attr("src", data.img);
-
-            // 해시태그 업데이트
-            const tagsHtml = data.tags.map(tag => `<span>${tag}</span>`).join('');
-            $info.find(".hashtag").html(tagsHtml);
-
+            $info.find(".hashtag").html(data.tags.map(tag => `<span>${tag}</span>`).join(''));
             $(this).fadeIn(200);
         });
 
-        // 지도 핀 상태 동기화
         $(".map-pin").removeClass("active");
         $(`.map-pin[data-team="${team}"]`).addClass("active");
-
         currentTeam = team;
     }
 
-    // 3. 지도 핀 클릭 이벤트
+    // 지도 핀 클릭 이벤트
     $(".map-pin").click(function () {
-        var selectedTeam = $(this).data("team");
-        updateContent(selectedTeam);
+        updateContent($(this).data("team"));
         $("#section2").addClass("is-view");
     });
 
-    // 4. 이동 버튼 클릭 이벤트 (Prev / Next)
+    // 이동 버튼 클릭 이벤트 (Prev / Next)
     $(".nav_btn.next").click(function () {
-        let idx = teamKeys.indexOf(currentTeam);
-        idx = (idx + 1) % teamKeys.length; // 마지막이면 처음으로
+        let idx = (teamKeys.indexOf(currentTeam) + 1) % teamKeys.length;
         updateContent(teamKeys[idx]);
     });
 
     $(".nav_btn.prev").click(function () {
-        let idx = teamKeys.indexOf(currentTeam);
-        idx = (idx - 1 + teamKeys.length) % teamKeys.length; // 처음이면 마지막으로
+        let idx = (teamKeys.indexOf(currentTeam) - 1 + teamKeys.length) % teamKeys.length;
         updateContent(teamKeys[idx]);
     });
-});
+
+    // 티켓 예매하기 버튼 클릭 이벤트
+    $("#ticketBtn").click(function (e) {
+        e.preventDefault();
+
+        const url = stadiumData[currentTeam].ticketUrl;
+
+        if (url) {
+            window.open(url, "_blank"); // 새 탭에서 열기
+        } else {
+            alert("예매 링크 준비 중입니다.");
+        }
+    });
+
+    //추천 코스보기 버튼 클릭 이벤트
+    $("#courseBtn").click(function (e) {
+        e.preventDefault();
+
+
+    });
 
 
 
-// Section 3 - CITY
-// 도시 탭 변경 -----------------------------------------------
-$(document).ready(function () {
+    /* Section 3 - CITY TRAVEL -------------------------------------------- */
+    // 도시별 데이터 정의
+    const cityData = {
+        busan: {
+            name: "부산",
+            desc: "바다와 야구를 함께 <br> 즐길 수 있는 도시",
+            stname: "#사직야구장",
+            tmname: "#롯데자이언츠",
+            bgMain: "../images/main/5-city/busan.png",
+            bgFood: "../images/main/5-city/busan1-food.png",
+            bgCafe: "../images/main/5-city/busan2-cafe.png",
+            bgCourse: "../images/main/5-city/busan3-course.png"
+        },
+
+        gwangju: {
+            name: "광주",
+            desc: "전통의 강호와 맛의 향연이 <br> 펼쳐지는 도시",
+            stname: "#기아챔피언스필드",
+            tmname: "#기아타이거즈",
+            bgMain: "../images/main/5-city/gwangju.png",
+            bgFood: "../images/main/5-city/gwangju1-food.png",
+            bgCafe: "../images/main/5-city/gwangju2-cafe.png",
+            bgCourse: "../images/main/5-city/gwangju3-course.png"
+        },
+
+        daegu: {
+            name: "대구",
+            desc: "뜨거운 열정과 사자의 포효가 <br> 가득한 도시",
+            stname: "#삼성라이온즈파크",
+            tmname: "#삼성라이온즈",
+            bgMain: "../images/main/5-city/daegu.png",
+            bgFood: "../images/main/5-city/daegu1-food.png",
+            bgCafe: "../images/main/5-city/daegu2-cafe.png",
+            bgCourse: "../images/main/5-city/daegu3-course.png"
+        },
+
+        daejeon: {
+            name: "대전",
+            desc: "포근한 낭만과 보문산 아래 <br> 울림이 있는 도시",
+            stname: "#한화생명볼파크",
+            tmname: "#한화이글스",
+            bgMain: "../images/main/5-city/daejeon.png",
+            bgFood: "../images/main/5-city/daejeon1-food.png",
+            bgCafe: "../images/main/5-city/daejeon2-cafe.png",
+            bgCourse: "../images/main/5-city/daejeon3-course.png"
+        },
+
+        seoul: {
+            name: "서울",
+            desc: "야구의 심장부에서 <br> 즐기는 뜨거운 더비",
+            stname: "#잠실야구장 #스카이돔",
+            tmname: "#LG트윈스 #두산베어스 #키움히어로즈",
+            bgMain: "../images/main/5-city/seoul.png",
+            bgFood: "../images/main/5-city/seoul1-food.png",
+            bgCafe: "../images/main/5-city/seoul2-cafe.png",
+            bgCourse: "../images/main/5-city/seoul3-course.png"
+        },
+
+        incheon: {
+            name: "인천",
+            desc: "바다를 건너 <br> 랜더스의 땅으로",
+            stname: "#SSG랜더스필드",
+            tmname: "#SSG랜더스",
+            bgMain: "../images/main/5-city/incheon.png",
+            bgFood: "../images/main/5-city/incheon1-food.png",
+            bgCafe: "../images/main/5-city/incheon2-cafe.png",
+            bgCourse: "../images/main/5-city/incheon3-course.png"
+        },
+
+        suwon: {
+            name: "수원",
+            desc: "수원 화성과 <br> 마법 같은 야구의 밤",
+            stname: "#KT위즈파크",
+            tmname: "#KT위즈",
+            bgMain: "../images/main/5-city/suwon.png",
+            bgFood: "../images/main/5-city/suwon1-food.png",
+            bgCafe: "../images/main/5-city/suwon2-cafe.png",
+            bgCourse: "../images/main/5-city/suwon3-course.png"
+        },
+
+        changwon: {
+            name: "창원",
+            desc: "메이저리그급 구장에서 <br> 만나는 새로운 여정",
+            stname: "#NC파크",
+            tmname: "#NC다이노스",
+            bgMain: "../images/main/5-city/changwon.png",
+            bgFood: "../images/main/5-city/changwon1-food.png",
+            bgCafe: "../images/main/5-city/changwon2-cafe.png",
+            bgCourse: "../images/main/5-city/changwon3-course.png"
+        }
+    };
+
+    // 콘텐츠 업데이트 함수
+    function updateCity(city) {
+        const data = cityData[city];
+        if (!data) return;
+
+        const $info = $(".cityinfo");
+        $info.find(".maincard h2").html(data.name);
+        $info.find(".maincard h3").html(data.desc);
+        $info.find(".maincard .sn").html(data.stname);
+        $info.find(".maincard .tn").html(data.tmname);
+        $info.find(".maincard").css("background-image", `url(${data.bgMain})`);
+        $info.find(".cityfood").css("background-image", `url(${data.bgFood})`);
+        $info.find(".citycafe").css("background-image", `url(${data.bgCafe})`);
+        $info.find(".citycourse").css("background-image", `url(${data.bgCourse})`);
+
+        if (typeof AOS !== 'undefined') AOS.refresh();
+    }
+
+    // 도시 탭 클릭 이벤트
     $(".citytab li a").click(function (e) {
-
-        e.preventDefault(); // 클릭 시 페이지 위로 튕기는 것 방지
-
-        // 1. 모든 버튼에서 'active' 클래스 제거
+        e.preventDefault();
         $(".citytab li a").removeClass("active");
-
-        // 2. 클릭한 탭에만 active 클래스 추가 (색상 변경)
         $(this).addClass("active");
 
-        // 3. 클릭한 탭의 data-tab 정보 가져오기 (ex: fashion, record)
-        var selectedtab = $(this).data("tab");
-
-        // 4. 모든 콘텐츠 숨기고, 클릭한 ID와 일치하는 콘텐츠만 보여주기
-        $(".cityinfo").hide();
-        $("#" + selectedtab).fadeIn(); // 부드럽게 나타나게 하기
+        const selectedTab = $(this).data("tab");
+        $(".cityinfo").stop().fadeOut(200, function () {
+            updateCity(selectedTab);
+            $(this).fadeIn(300);
+        });
     });
-});
+
+    updateCity("busan"); // 초기 실행
 
 
-// Section 5 - SHOP
-// 굿즈 탭 변경 -----------------------------------------------
-$(document).ready(function () {
+
+    /* Section 5 - Goods -------------------------------------------- */
+    // 굿즈 Swiper 슬라이드
+    var goodsSwiper = new Swiper('.goodsinfo', {
+        initialSlide: 1,
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 20,
+        loop: true,
+        loopAdditionalSlides: 4,
+        slideToClickedSlide: true,
+        observer: true,
+        observeParents: true,
+
+        pagination: {
+            el: '.goodsinfo .swiper-pagination',
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: '.goodsinfo .swiper-button-next',
+            prevEl: '.goodsinfo .swiper-button-prev',
+        },
+
+        on: {
+            init: function () {
+                AOS.refresh();
+            },
+        }
+    });
+    
+    // 굿즈 탭 클릭 이벤트
     $(".goodstab li a").click(function (e) {
-
-        e.preventDefault(); // 클릭 시 페이지 위로 튕기는 것 방지
-
-        // 1. 모든 버튼에서 'active' 클래스 제거
+        e.preventDefault();
         $(".goodstab li a").removeClass("active");
-
-        // 2. 클릭한 탭에만 active 클래스 추가 (색상 변경)
         $(this).addClass("active");
 
-        // 3. 클릭한 탭의 data-tab 정보 가져오기 (ex: fashion, record)
-        var selectedtab = $(this).data("tab");
+        const targetTab = $(this).data("tab");
+        $(".goodsinfo").hide().removeClass("active");
+        $("#" + targetTab).show();
 
-        // 4. 모든 콘텐츠 숨기고, 클릭한 ID와 일치하는 콘텐츠만 보여주기
-        $(".goodsinfo").hide();
-        $("#" + selectedtab).fadeIn(); // 부드럽게 나타나게 하기
+        const swipers = [swiper1, swiper2, swiper3];
+        swipers.forEach(function(instance) {
+            if ($(instance.el).closest('.goodsinfo').hasClass('active')) {
+                instance.update();      
+                instance.loopFix(); 
+                instance.slideToLoop(0, 0); 
+            }
+        });
+        
+        AOS.refresh();
     });
-});
+
+    $(".goodstab li:first-child a").trigger("click");
 
 
-// Section 6 - COMMUNITY 
-//리뷰 탭 변경 -----------------------------------------------
-$(document).ready(function () {
+    /* Section 6 - Community -------------------------------------------- */
+    // 후기 탭 클릭 이벤트
     $(".tab-item").click(function (e) {
-
-        e.preventDefault(); // 클릭 시 페이지 위로 튕기는 것 방지
-
-        // 1. 모든 버튼에서 'active' 클래스 제거
+        e.preventDefault();
         $(".tab-item").removeClass("active");
-
-        // 2. 클릭한 탭에만 active 클래스 추가 (색상 변경)
         $(this).addClass("active");
-
-        // 3. 클릭한 탭의 data-tab 값 가져오기
-        var tabId = $(this).attr('data-tab');
-
-        // 4. 오른쪽 모든 섹션 숨기고 해당하는 클래스명을 가진 섹션만 보이기
+        
+        const tabId = $(this).attr('data-tab');
         $('.reviewcontents section').hide().removeClass('active');
         $('#' + tabId).fadeIn(400).addClass('active');
-
-        // 탭 클릭 시 상단으로 부드럽게 스크롤 (원할 경우)
-        // $('html, body').animate({
-        //     scrollTop: $('#section6').offset().top
-        // }, 500);
     });
-});
+
+    // 리뷰 Swiper 슬라이드
+    /*var swiper = new Swiper(".reviewcontents", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        centeredSlides: false,
+        loop: true,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+        },
+        speed: 5000,
+        allowTouchMove: true, // 사용자 드래그 허용 여부
+    });*/
 
 
+    /* 구단 로고 Swiper 슬라이드 ------------------------------- */
+    var swiper = new Swiper(".logoslide", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+        },
+        speed: 6000,
+    });
 
-//Section 7 - CTA 버튼
 
+    /* Top Button ------------------------------- */
+    const $topBtn = $('#TopBtn');
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 500) {
+            $topBtn.addClass('is-visible');
+        } else {
+            $topBtn.removeClass('is-visible');
+        }
+    });
 
-
-// BASEBALL ROAD - Top Button Functionality
-const topBtn = document.getElementById('TopBtn');
-
-// 1. 스크롤 감지: 일정 높이 이상 내려가면 버튼 표시
-window.addEventListener('scroll', () => {
-    // 300px 이상 스크롤 시 버튼 표시
-    if (window.pageYOffset > 500) {
-        topBtn.classList.add('is-visible');
-    } else {
-        topBtn.classList.remove('is-visible');
-    }
-});
-
-// 2. 클릭 이벤트: 맨 위로 부드럽게 스크롤
-topBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // 부드러운 스크롤 효과
+    $topBtn.click(function () {
+        $('html, body').stop().animate({ scrollTop: 0 }, 'smooth');
     });
 });
