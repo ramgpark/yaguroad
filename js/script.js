@@ -283,10 +283,10 @@ $(document).ready(function () {
             desc: "바다와 야구를 함께 <br> 즐길 수 있는 도시",
             stname: "#사직야구장",
             tmname: "#롯데자이언츠",
-            bgMain: "../images/main/5-city/busan.png",
-            bgFood: "../images/main/5-city/busan1-food.png",
-            bgCafe: "../images/main/5-city/busan2-cafe.png",
-            bgCourse: "../images/main/5-city/busan3-course.png"
+            bgMain: "./images/main/5-city/busan.png",
+            bgFood: "./images/main/5-city/busan1-food.png",
+            bgCafe: "./images/main/5-city/busan2-cafe.png",
+            bgCourse: "./images/main/5-city/busan3-course.png"
         },
 
         gwangju: {
@@ -294,10 +294,10 @@ $(document).ready(function () {
             desc: "전통의 강호와 맛의 향연이 <br> 펼쳐지는 도시",
             stname: "#기아챔피언스필드",
             tmname: "#기아타이거즈",
-            bgMain: "../images/main/5-city/gwangju.png",
-            bgFood: "../images/main/5-city/gwangju1-food.png",
-            bgCafe: "../images/main/5-city/gwangju2-cafe.png",
-            bgCourse: "../images/main/5-city/gwangju3-course.png"
+            bgMain: "./images/main/5-city/gwangju.png",
+            bgFood: "./images/main/5-city/gwangju1-food.png",
+            bgCafe: "./images/main/5-city/gwangju2-cafe.png",
+            bgCourse: "./images/main/5-city/gwangju3-course.png"
         },
 
         daegu: {
@@ -305,10 +305,10 @@ $(document).ready(function () {
             desc: "뜨거운 열정과 사자의 포효가 <br> 가득한 도시",
             stname: "#삼성라이온즈파크",
             tmname: "#삼성라이온즈",
-            bgMain: "../images/main/5-city/daegu.png",
-            bgFood: "../images/main/5-city/daegu1-food.png",
-            bgCafe: "../images/main/5-city/daegu2-cafe.png",
-            bgCourse: "../images/main/5-city/daegu3-course.png"
+            bgMain: "./images/main/5-city/daegu.png",
+            bgFood: "./images/main/5-city/daegu1-food.png",
+            bgCafe: "./images/main/5-city/daegu2-cafe.png",
+            bgCourse: "./images/main/5-city/daegu3-course.png"
         },
 
         daejeon: {
@@ -316,10 +316,10 @@ $(document).ready(function () {
             desc: "포근한 낭만과 보문산 아래 <br> 울림이 있는 도시",
             stname: "#한화생명볼파크",
             tmname: "#한화이글스",
-            bgMain: "../images/main/5-city/daejeon.png",
-            bgFood: "../images/main/5-city/daejeon1-food.png",
-            bgCafe: "../images/main/5-city/daejeon2-cafe.png",
-            bgCourse: "../images/main/5-city/daejeon3-course.png"
+            bgMain: "./images/main/5-city/daejeon.png",
+            bgFood: "./images/main/5-city/daejeon1-food.png",
+            bgCafe: "./images/main/5-city/daejeon2-cafe.png",
+            bgCourse: "./images/main/5-city/daejeon3-course.png"
         },
 
         seoul: {
@@ -327,10 +327,10 @@ $(document).ready(function () {
             desc: "야구의 심장부에서 <br> 즐기는 뜨거운 더비",
             stname: "#잠실야구장 #스카이돔",
             tmname: "#LG트윈스 #두산베어스 #키움히어로즈",
-            bgMain: "../images/main/5-city/seoul.png",
-            bgFood: "../images/main/5-city/seoul1-food.png",
-            bgCafe: "../images/main/5-city/seoul2-cafe.png",
-            bgCourse: "../images/main/5-city/seoul3-course.png"
+            bgMain: "./images/main/5-city/seoul.png",
+            bgFood: "./images/main/5-city/seoul1-food.png",
+            bgCafe: "./images/main/5-city/seoul2-cafe.png",
+            bgCourse: "./images/main/5-city/seoul3-course.png"
         },
 
         incheon: {
@@ -338,10 +338,10 @@ $(document).ready(function () {
             desc: "바다를 건너 <br> 랜더스의 땅으로",
             stname: "#SSG랜더스필드",
             tmname: "#SSG랜더스",
-            bgMain: "../images/main/5-city/incheon.png",
-            bgFood: "../images/main/5-city/incheon1-food.png",
-            bgCafe: "../images/main/5-city/incheon2-cafe.png",
-            bgCourse: "../images/main/5-city/incheon3-course.png"
+            bgMain: "./images/main/5-city/incheon.png",
+            bgFood: "./images/main/5-city/incheon1-food.png",
+            bgCafe: "./images/main/5-city/incheon2-cafe.png",
+            bgCourse: "./images/main/5-city/incheon3-course.png"
         },
 
         suwon: {
@@ -349,10 +349,10 @@ $(document).ready(function () {
             desc: "수원 화성과 <br> 마법 같은 야구의 밤",
             stname: "#KT위즈파크",
             tmname: "#KT위즈",
-            bgMain: "../images/main/5-city/suwon.png",
-            bgFood: "../images/main/5-city/suwon1-food.png",
-            bgCafe: "../images/main/5-city/suwon2-cafe.png",
-            bgCourse: "../images/main/5-city/suwon3-course.png"
+            bgMain: "./images/main/5-city/suwon.png",
+            bgFood: "./images/main/5-city/suwon1-food.png",
+            bgCafe: "./images/main/5-city/suwon2-cafe.png",
+            bgCourse: "./images/main/5-city/suwon3-course.png"
         },
 
         changwon: {
@@ -360,10 +360,10 @@ $(document).ready(function () {
             desc: "메이저리그급 구장에서 <br> 만나는 새로운 여정",
             stname: "#NC파크",
             tmname: "#NC다이노스",
-            bgMain: "../images/main/5-city/changwon.png",
-            bgFood: "../images/main/5-city/changwon1-food.png",
-            bgCafe: "../images/main/5-city/changwon2-cafe.png",
-            bgCourse: "../images/main/5-city/changwon3-course.png"
+            bgMain: "./images/main/5-city/changwon.png",
+            bgFood: "./images/main/5-city/changwon1-food.png",
+            bgCafe: "./images/main/5-city/changwon2-cafe.png",
+            bgCourse: "./images/main/5-city/changwon3-course.png"
         }
     };
 
