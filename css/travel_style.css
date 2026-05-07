@@ -189,7 +189,7 @@
    height: 400px;
    color: #fff;
 
-   background-image: url(../images/travel/travel_banner.png);
+   background-image: url(../images/travel/travel_banner3.png);
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
@@ -219,183 +219,245 @@
    height: 2000px;
  }
 
- .section{
+ .section {
    width: 1320px;
    margin: 50px auto;
    padding: 20px 0;
  }
 
  /* 도시 필터 */
+ .guide_text {
+   text-align: center;
+   margin: 30px 0;
+   font-size: 20px;
+ }
+
  .city_filter {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  align-items: flex-start;
-}
+   display: flex;
+   gap: 40px;
+   justify-content: center;
+   align-items: flex-start;
+ }
 
-.city_item button {
-  border: 0;
-  background: none;
-  cursor: pointer;
-}
+ .city_item button {
+   border: 0;
+   background: none;
+   cursor: pointer;
+ }
 
-.city_img {
-  display: block;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
+ .city_img {
+   display: block;
+   width: 72px;
+   height: 72px;
+   border-radius: 50%;
+   overflow: hidden;
+   transition: transform 0.35s ease, box-shadow 0.35s ease;
+ }
 
-.city_img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+ .city_img img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ }
 
-.city_name {
-  display: block;
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-  text-align: center;
-}
+ .city_name {
+   display: block;
+   margin-top: 10px;
+   font-size: 16px;
+   font-weight: 500;
+   color: #333;
+   text-align: center;
+ }
 
-.city_item.active .city_img {
-  transform: scale(1.2) translateY(-10px);
-  border: 2px solid #333;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-}
+ .city_item.active .city_img {
+   transform: scale(1.2) translateY(-10px);
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+ }
 
-.city_item.active .city_name {
-  font-size: 18px;
-  font-weight: 700;
-  color: #2b4a8f;
-}
+ .city_item.active .city_name {
+   font-size: 26px;
+   font-weight: 700;
+   color: #2b4a8f;
+ }
 
-.city_text{
-  text-align: center;
-  margin-top: 30px;
-  font-size: 18px;
-}
 
-/* 인기 맛집*/
-#section2{
-  display: flex;
-}
 
-#section2 .textbox{
-  width: 18%;
-}
+ /* 인기 맛집, 인기 카페*/
+ #section2,
+ #section3 {
+   display: flex;
+ }
 
-.textbox .title{
-  font-size: 30px;
-  font-weight: 600;
-}
+ .textbox {
+   width: 18%;
+ }
 
-#section2 .contentsbox{
-  width: 100%;
-  margin: 0 20px;
-  background-color: #2b4b8f13;
-  overflow: hidden;
-}
+ .textbox .title {
+   font-size: 30px;
+   font-weight: 600;
+ }
 
-.card-list {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
+ .textbox .sub_text {
+   margin-top: 10px;
+   padding-left: 5px;
+ }
 
-/* 카드 기본 설정 */
-.card {
-    flex: 0 0 25%; /* 한 화면에 4개 배치 */
-    padding: 20px;
-    box-sizing: border-box;
-    perspective: 1000px; /* 3D 효과 */
-}
+ .contentsbox {
+   width: 100%;
+   padding: 20px;
+   padding-bottom: 20px;
+   background-color: #2b4b8f13;
+   overflow: hidden;
+ }
 
-.img-box {
-    width: 100%;
-    height: 50%;
-}
+ .card-list {
+   display: flex;
+   transition: transform 0.5s ease-in-out;
+ }
 
-.img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+ .card {
+   flex: 0 0 25%;
+   /* 한 화면에 4개 배치 */
+   padding-bottom: 30px;
+   box-sizing: border-box;
+   transition: all 0.5s;
+ }
 
-.info-box {
-    width: 100%;
-    height: 50%;
-    background-color: #2b4a8f;
-    padding: 20px;
-    color: white;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-}
+ .img-box {
+   width: 100%;
+   height: 55%;
+   overflow: hidden;
+ }
 
-.info-box h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
+ .img-box img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: all 0.5s;
+ }
 
-.divider {
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    margin-bottom: 12px;
-}
+ .info-box {
+   width: 100%;
+   height: 45%;
+   background-color: #2b4a8f;
+   padding: 20px;
+   color: #fff;
+   box-sizing: border-box;
+ }
 
-.description {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: auto; 
-}
+ #section3 .info-box {
+   background-color: #EE6E29;
+ }
 
-.action-area {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 15px;
-    padding-top: 10px;
-}
+ .info-box h3 {
+   font-size: 20px;
+   font-weight: bold;
+   margin-bottom: 6px;
+ }
 
-.icon-link {
-    display: inline-block;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    text-decoration: none;
-}
+ .divider {
+   width: 100%;
+   height: 2px;
+   background-color: #fff;
+   margin-bottom: 12px;
+ }
 
-.icon-img {
-    width: 24px;  /* 아이콘 너비 조절 */
-    height: 24px; /* 아이콘 높이 조절 */
-    filter: brightness(0) invert(1); /* 검정색 아이콘을 흰색으로 변경 (필요 시 사용) */
-    object-fit: contain;
-}
+ .description {
+   font-size: 15px;
+   font-weight: 600;
+   line-height: 1.5;
+ }
 
-/* 마우스 호버 효과 */
-.icon-link:hover {
-    transform: scale(1.1); /* 살짝 커지게 */
-    opacity: 0.8;
-}
+ .hashtag {
+   font-size: 14px;
+   font-weight: 600;
+   margin: 20px 0;
+ }
 
-/* --- 뒷면 디자인 --- */
-.card-back {
-    background-color: white;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #2D4B8F;
-    text-align: center;
-    color: #333;
-}
+ .action-area {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 15px;
+   padding: 10px 0;
+ }
 
+ .icon-wrap {
+   position: relative;
+   width: 24px;
+   height: 24px;
+   cursor: pointer;
+ }
+
+ .icon-wrap img {
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+   transition: opacity 0.3s ease-in-out;
+
+   position: absolute;
+   top: 0;
+   left: 0;
+ }
+
+ .icon-img.default {
+   filter: brightness(0) invert(1);
+ }
+
+ .icon-img.hover {
+   opacity: 0;
+ }
+
+ .icon-wrap:hover {
+   transform: scale(1.1);
+ }
+
+ .card:hover .info-box {
+   background-color: #ffffff;
+   color: #2b4a8f;
+   border: 2px solid #2b4a8f;
+   border-top: none;
+ }
+
+ #section3 .card:hover .info-box {
+   background-color: #ffffff;
+   color: #EE6E29;
+   border: 2px solid #EE6E29;
+   border-top: none;
+ }
+
+ .card:hover .divider {
+   background-color: #2b4a8f;
+ }
+
+ #section3 .card:hover .divider {
+   background-color: #EE6E29;
+ }
+
+ .card:hover .img-box img {
+   scale: 1.05;
+ }
+
+ .card:hover .icon-wrap img.default {
+   opacity: 0;
+ }
+
+ .card:hover .icon-wrap img.hover {
+   opacity: 1;
+ }
+
+
+ /* 스크롤바 */
+ .contentsbox .swiper-scrollbar {
+   background: rgba(0, 0, 0, 0.2);
+   height: 5px;
+   bottom: 20px;
+ }
+
+ /* 스크롤바 드래그 막대 스타일 */
+ .contentsbox .swiper-scrollbar-drag {
+   background: #333;
+ }
 
 
  /* --------------------- Footer --------------------- */
@@ -494,9 +556,8 @@
    position: fixed;
    bottom: 40px;
    right: 40px;
-   width: 60px;
-   /* 이미지 크기에 맞게 조절 */
-   height: 60px;
+   width: 80px;
+   height: 80px;
    background: none;
    border: none;
    cursor: pointer;

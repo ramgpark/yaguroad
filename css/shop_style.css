@@ -297,31 +297,75 @@
  /* sub_banner */
  .sub_banner {
      height: 400px;
-     background: url(../images/shop/shop_sub_banner1.png) no-repeat center/cover;
-     padding: 20px 0;
-     position: relative;  /* .detail의 기준점 */
+     position: relative;
+     /* .detail의 기준점 */
  }
 
- .detail {
+ .swiper-slide {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .swiper-slide img {
+     width: 100%;
+     display: block;
+     object-fit: cover;
+ }
+
+ .detail1 {
      display: inline-block;
-     background-color: #d9e7fc;
      color: #2B4A8F;
      font-size: 22px;
+     font-weight: 600;
      padding: 10px 25px;
      border: 3px solid #2B4A8F;
+     border-radius: 50px;
+     box-shadow: 2px 2px 0 #2B4A8F;
+     transition: all 0.5s;
+
+     position: absolute;
+     top: 64%;
+     left: 54%;
+ }
+
+ .detail2 {
+     display: inline-block;
+     color: #ffffff;
+     background-color: #2B4A8F;
+     font-size: 22px;
+     font-weight: 600;
+     padding: 10px 25px;
      border-radius: 50px;
      transition: all 0.5s;
 
      position: absolute;
-     top: 59%;
-     left: 49%;
+     top: 67%;
+     left: 25%;
+
  }
 
- .detail:hover {
+ .detail1:hover {
      background-color: #2B4A8F;
      color: #fff;
      transform: translateY(-3px);
  }
+
+ .detail2:hover {
+     background-color: #ffffff;
+     border: 3px solid #2B4A8F;
+     color: #2B4A8F;
+     transform: translateY(-3px);
+ }
+
+ .swiper-pagination {
+     bottom: 40px !important;
+ }
+
+ .swiper-pagination-bullet-active {
+     background-color: #2B4A8F;
+ }
+
 
  /* 전체 상품 */
  .goodstab {
@@ -352,7 +396,7 @@
  .goodstab li a:hover,
  .goodstab li a.active {
      color: #fff;
-     border: none;
+     border: 1px solid #EE6E29;
      background-color: #EE6E29;
  }
 
@@ -387,19 +431,19 @@
      background-image: url(../images/main/7-shop/Talent-w.svg);
  }
 
- .filter_wrap{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
+ .filter_wrap {
+     display: flex;
+     justify-content: space-between;
+     padding: 0 10px;
  }
 
- .filter_wrap p{
-    font-size: 18px;
+ .filter_wrap p {
+     font-size: 18px;
  }
 
-  .filter_wrap select{
-    padding: 0 10px;
-  }
+ .filter_wrap select {
+     padding: 0 10px;
+ }
 
  .all {
      display: grid;
@@ -553,9 +597,8 @@
      position: fixed;
      bottom: 40px;
      right: 40px;
-     width: 60px;
-     /* 이미지 크기에 맞게 조절 */
-     height: 60px;
+     width: 80px;
+     height: 80px;
      background: none;
      border: none;
      cursor: pointer;
