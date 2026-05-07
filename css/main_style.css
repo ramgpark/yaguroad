@@ -487,7 +487,6 @@ html {
     color: #2B4A8F;
     margin-right: 5px;
     white-space: nowrap;
-    /* 라벨이 줄바꿈되지 않게 */
 }
 
 
@@ -503,8 +502,9 @@ html {
 
 .stadiuminfo .textbox .hashtag span {
     font-size: 15px;
+    font-weight: 600;
     margin-right: 6px;
-    padding: 3px 5px;
+    padding: 3px 8px;
     border-radius: 5px;
     background-color: #dde9f7;
 }
@@ -531,6 +531,7 @@ html {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
     transition: background 0.3s;
 }
 
@@ -606,23 +607,20 @@ html {
     position: absolute;
     padding: 8px 16px;
     border-radius: 25px;
+    border: 1px solid #666666;
     background: #2B4A8F;
-    color: white;
+    color: #fff;
     font-family: Pretendard;
     font-size: 18px;
     font-weight: 600;
-    border: none;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.5s;
     transform: translate(-50%, -50%);
-    /* 중심점 맞추기 */
 }
 
-/* 마우스 올렸을 때나 클릭되었을 때 색상 변경 */
 .map-pin:hover,
 .map-pin.active {
     background: #EE6E29;
-    /* 삼성 라이온즈 오렌지 색상 예시 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -658,7 +656,7 @@ html {
 }
 
 .pin-kia {
-    top: 68%;
+    top: 70%;
     left: 32%;
 }
 
@@ -669,15 +667,14 @@ html {
 
 .pin-lotte {
     top: 64%;
-    left: 81%;
+    left: 82%;
 }
 
 
 /* 애니메이션 주기 */
 /* 1. 타이틀: 위로 이동 */
 #section2.is-view .title {
-    transform: translateY(-10px);
-    /* 위로 이동할 양 */
+    transform: translateY(30px);
 }
 
 /* 2. 지도 컨테이너: 오른쪽으로 이동 */
@@ -690,7 +687,7 @@ html {
 #section2.is-view .stadiuminfo {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-70px);
+    transform: translateY(-50px);
 }
 
 
@@ -710,7 +707,7 @@ html {
 
 .citytab li a {
     display: inline-block;
-    border: 1px solid #959595;
+    border: 1px solid #888888;
     border-radius: 50px;
     font-family: isamanru;
     font-size: 24px;
@@ -732,13 +729,6 @@ html {
     margin-top: 50px;
     /* position 부모요소, .subcard의 기준점 */
     position: relative;
-
-    display: none;
-}
-
-.cityinfo.active {
-    display: block;
-    /* active 상태만 보여주기 */
 }
 
 .maincard {
@@ -782,7 +772,7 @@ html {
 .subcard li {
     width: 312px;
     height: 404px;
-    border: 1px solid #D9D9D9;
+    border: 1px solid #888888;
     ;
     border-radius: 34px;
     text-align: left;
@@ -841,6 +831,7 @@ html {
     transform: scale(1.1) !important;
 }
 
+
 /* 카드 개별 꾸미기 */
 .cityfood,
 .citycafe,
@@ -876,143 +867,6 @@ html {
 .citycourse .movebtn:hover {
     background-image: url(../images/main/5-city/next_btn_blue.svg);
     background-size: 100%;
-}
-
-/* 지역별 카드 배경화면 */
-/* 부산 */
-#busan .maincard {
-    background-image: url(../images/main/5-city/busan.png);
-}
-
-#busan .cityfood {
-    background-image: url(../images/main/5-city/busan1-food.png);
-}
-
-#busan .citycafe {
-    background-image: url(../images/main/5-city/busan2-cafe.png);
-}
-
-#busan .citycourse {
-    background-image: url(../images/main/5-city/busan3-course.png);
-}
-
-/* 광주 */
-#gwangju .maincard {
-    background-image: url(../images/main/5-city/gwangju.png);
-}
-
-#gwangju .cityfood {
-    background-image: url(../images/main/5-city/gwangju1-food.png);
-}
-
-#gwangju .citycafe {
-    background-image: url(../images/main/5-city/gwangju2-cafe.png);
-}
-
-#gwangju .citycourse {
-    background-image: url(../images/main/5-city/gwangju3-course.png);
-}
-
-/* 대구 */
-#daegu .maincard {
-    background-image: url(../images/main/5-city/daegu.png);
-}
-
-#daegu .cityfood {
-    background-image: url(../images/main/5-city/daegu1-food.png);
-}
-
-#daegu .citycafe {
-    background-image: url(../images/main/5-city/daegu2-cafe.png);
-}
-
-#daegu .citycourse {
-    background-image: url(../images/main/5-city/daegu3-course.png);
-}
-
-/* 대전 */
-#daejeon .maincard {
-    background-image: url(../images/main/5-city/daejeon.png);
-}
-
-#daejeon .cityfood {
-    background-image: url(../images/main/5-city/daejeon1-food.png);
-}
-
-#daejeon .citycafe {
-    background-image: url(../images/main/5-city/daejeon2-cafe.png);
-}
-
-#daejeon .citycourse {
-    background-image: url(../images/main/5-city/daejeon3-course.png);
-}
-
-/* 서울 */
-#seoul .maincard {
-    background-image: url(../images/main/5-city/daejeon.png);
-}
-
-#seoul .cityfood {
-    background-image: url(../images/main/5-city/daejeon1-food.png);
-}
-
-#seoul .citycafe {
-    background-image: url(../images/main/5-city/daejeon2-cafe.png);
-}
-
-#seoul .citycourse {
-    background-image: url(../images/main/5-city/daejeon3-course.png);
-}
-
-/* 수원 */
-#suwon .maincard {
-    background-image: url(../images/main/5-city/daejeon.png);
-}
-
-#suwon .cityfood {
-    background-image: url(../images/main/5-city/daejeon1-food.png);
-}
-
-#suwon .citycafe {
-    background-image: url(../images/main/5-city/daejeon2-cafe.png);
-}
-
-#suwon .citycourse {
-    background-image: url(../images/main/5-city/daejeon3-course.png);
-}
-
-/* 인천 */
-#incheon .maincard {
-    background-image: url(../images/main/5-city/daejeon.png);
-}
-
-#incheon .cityfood {
-    background-image: url(../images/main/5-city/daejeon1-food.png);
-}
-
-#incheon .citycafe {
-    background-image: url(../images/main/5-city/daejeon2-cafe.png);
-}
-
-#incheon .citycourse {
-    background-image: url(../images/main/5-city/daejeon3-course.png);
-}
-
-/* 창원 */
-#changwon .maincard {
-    background-image: url(../images/main/5-city/daejeon.png);
-}
-
-#changwon .cityfood {
-    background-image: url(../images/main/5-city/daejeon1-food.png);
-}
-
-#changwon .citycafe {
-    background-image: url(../images/main/5-city/daejeon2-cafe.png);
-}
-
-#changwon .citycourse {
-    background-image: url(../images/main/5-city/daejeon3-course.png);
 }
 
 
@@ -1343,8 +1197,6 @@ html {
     position: relative;
 }
 
-
-
 .next_trip .textbox h2 {
     color: #2b4a8f;
     font-size: 20px;
@@ -1371,7 +1223,7 @@ html {
     left: 0;
 }
 
-.next_trip .textbox a {
+.next_trip .textbox .button {
     display: inline-block;
     padding: 7px 30px;
     margin-top: 15px;
@@ -1380,9 +1232,10 @@ html {
     border-radius: 10px;
     border: 1px solid #EE6E29;
     color: #EE6E29;
+    cursor: pointer;
 }
 
-.next_trip .textbox a:hover {
+.next_trip .textbox .button:hover {
     background-color: #EE6E29;
     color: #fff;
 }
@@ -1416,15 +1269,14 @@ html {
     align-items: center;
     color: #333;
     border-radius: 50px;
-    font-family: isamanru;
     font-size: 20px;
-    font-weight: 400;
-    padding: 5px 30px 5px 50px;
+    font-weight: 700;
+    padding: 10px 30px 10px 50px;
 
     /* 배경 공통 설정 */
     background-color: #fff;
     background-repeat: no-repeat;
-    background-position: 15px 7px;
+    background-position: 18px 12px;
     background-size: 23px;
 }
 
@@ -1463,123 +1315,132 @@ html {
 
 /* 굿즈 콘텐츠 */
 .goodsinfo {
-    margin-top: 30px;
-    display: flex;
-    color: #333;
+    width: 1200px;
+    height: 400px;
+    margin-top: 20px;
+    padding: 50px 30px 100px;
+    /* 확대 시 잘리지 않도록 여백 확보 */
     display: none;
-}
-
-.goodsinfo.active {
-    display: block;
-    /* active 상태만 보여주기 */
+    /* 기본 숨기기 */
+    overflow: hidden;
 }
 
 .goodslist {
     display: flex;
-    gap: 20px;
 }
 
-.goodslist li a {
-    display: block;
-}
-
-.goodslist .maingoods {
-    margin-top: 20px;
-    width: 460px;
-    height: 451px;
+/* 기본 슬라이드 */
+.goodslist .swiper-slide {
+    width: 360px;
+    height: 410px;
     background-color: #fff;
-    border-radius: 30px;
-    box-sizing: border-box;
-    transition: all 0.5s;
-    position: relative;
+    color: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+
+    transition: all 0.5s ease;
+    transform: scale(0.9);
+    z-index: 1;
 }
 
-.goodslist .subgoods {
-    margin-top: 130px;
-    width: 271px;
-    height: 342px;
-    background-color: #fff;
-    border-radius: 30px;
-    box-sizing: border-box;
-    transition: all 0.5s;
-    position: relative;
+/* 가운데(활성화) 슬라이드 */
+.goodslist .swiper-slide-active {
+    transform: scale(1.1);
+    z-index: 10;
 }
+
 
 /* 이미지 박스 */
 .goodslist .imgbox {
     width: 100%;
-    height: 230px;
-    border-radius: 20px 20px 0 0;
+    height: 75%;
     overflow: hidden;
-
-    /* 배경설정 */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 110%;
-    transition: background-size 0.4s ease-out;
+    transition: all 0.4s ease-out;
 }
 
-.maingoods .imgbox {
-    width: 100%;
-    height: 340px;
-}
-
-.number {
+.goodslist .imgbox img {
     display: block;
-    width: 50px;
-    height: 50px;
-    font-size: 28px;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    background-color: #EE6E29;
-    border-radius: 10px 5px;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.goodslist li:hover .imgbox {
-    background-size: 115%;
+    width: 100%;
+    height: 100%;
 }
 
 
 /* 텍스트 박스 */
 .goodslist .textbox {
+    width: 100%;
+    height: 25%;
     padding: 20px;
+    box-sizing: border-box;
+
+    position: relative;
+    /* .tag의 기준점 */
 }
 
-.goodsname {
-    font-size: 22px;
-    font-weight: 500;
-}
-
-.goodsprice {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-
-.tag {
+.goodslist .textbox .tag {
     font-size: 18px;
     font-weight: bold;
 
     position: absolute;
-    bottom: 90px;
+    top: -5px;
 }
 
-.best {
-    color: #2B4A8F;
+.goodslist .textbox .goodsname {
+    font-size: 22px;
+    font-weight: 500;
 }
 
-.sale {
+.goodslist .textbox .goodsprice {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.goodslist .textbox .percent {
+    font-size: 18px;
     color: #EE6E29;
 }
 
-.small {
-    font-size: 18px;
+/* 페이지네이션, 네비게이션 버튼 스타일 */
+.goodsinfo .swiper-pagination {
+    bottom: 20px !important;
+    z-index: 1000;
 }
+
+.goodsinfo .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    opacity: 1;
+    margin: 0 5px !important;
+    transition: all 0.3s;
+}
+
+.goodsinfo .swiper-pagination-bullet-active {
+    width: 30px; 
+    border-radius: 5px;
+    background: #EE6E29 !important;
+}
+
+.goodsinfo .swiper-button-next,
+.goodsinfo .swiper-button-prev {
+    color: #EE6E29 !important;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+/* 화살표 위치 */
+.goodsinfo .swiper-button-prev { left: 0; }
+.goodsinfo .swiper-button-next { right: 0; }
+
+/* 화살표 사이즈 */
+.goodsinfo .swiper-button-next:after,
+.goodsinfo .swiper-button-prev:after {
+    font-size: 30px !important;
+    font-weight: bold;
+}
+
+
 
 /*--------------------- Section 6 - Review ---------------------  */
 .reviewinfo {
@@ -1777,7 +1638,7 @@ html {
     font-size: 60px;
     display: flex;
     justify-content: center;
-    text-align: left;
+    text-align: center;
     padding-top: 200px;
 }
 
@@ -1848,18 +1709,18 @@ html {
     left: 0;
 }
 
-.info li {
+.footerinfo li {
     margin: 10px 0;
     font-size: 16px;
     font-weight: 200;
     opacity: 0.9;
 }
 
-.info strong {
+.footerinfo strong {
     font-weight: 500;
 }
 
-.link li {
+.footerlink li {
     font-size: 20px;
     font-weight: 600;
     margin: 10px 0;
@@ -1867,7 +1728,7 @@ html {
     opacity: 0.9;
 }
 
-.link li:hover {
+.footerlink li:hover {
     color: #EE6E29;
 }
 
@@ -1923,7 +1784,7 @@ html {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 9999;
 
     /* 초기 상태: 숨김 */
     opacity: 0;
@@ -1952,7 +1813,6 @@ html {
 /* --- 호버 인터랙션 --- */
 .br-top-btn:hover {
     transform: translateY(-10px);
-    /* 위로 살짝 점프 */
 }
 
 
@@ -1998,7 +1858,7 @@ html {
 
 .char4 {
     position: absolute;
-    right: 650px;
+    right: 720px;
     bottom: -20px;
 }
 
