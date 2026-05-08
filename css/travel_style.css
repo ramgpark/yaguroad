@@ -215,17 +215,13 @@
 
 
  /* --------------------- Container --------------------- */
- #container {
-   height: 2000px;
- }
-
- .section {
+ #section1 {
    width: 1320px;
    margin: 50px auto;
    padding: 20px 0;
  }
 
- /* 도시 필터 */
+ /* section1: 도시필터 */
  .guide_text {
    text-align: center;
    margin: 30px 0;
@@ -280,11 +276,11 @@
    color: #2b4a8f;
  }
 
-
-
- /* 인기 맛집, 인기 카페*/
- #section3,
- #section4 {
+ /* section 공통 */
+ .section {
+   width: 1320px;
+   margin: 50px auto;
+   padding: 20px 0;
    display: flex;
  }
 
@@ -302,10 +298,29 @@
    margin-top: 10px;
  }
 
+
+ /* section2: 여행 코스*/
+ .map_wrap {
+   width: 100%;
+   height: 700px;
+
+   position: relative;
+   /* .map_img의 기준점 */
+ }
+
+ .map_img {
+   display: block;
+   width: 800px;
+
+   position: absolute;
+   top: -10%;
+   left: -16%;
+ }
+
+ /* section3: 인기 맛집, section4:인기 카페*/
  .contentsbox {
    width: 100%;
    padding: 20px;
-   padding-bottom: 20px;
    background-color: #2b4b8f13;
    overflow: hidden;
  }
@@ -323,20 +338,20 @@
    transition: all 0.5s;
  }
 
- .img-box {
+ .card .img-box {
    width: 100%;
    height: 55%;
    overflow: hidden;
  }
 
- .img-box img {
+ .card .img-box img {
    width: 100%;
    height: 100%;
    object-fit: cover;
    transition: all 0.5s;
  }
 
- .info-box {
+ .card .info-box {
    width: 100%;
    height: 45%;
    background-color: #2b4a8f;
@@ -346,12 +361,12 @@
    box-sizing: border-box;
  }
 
- #section4 .info-box {
+ #section4 .card .info-box {
    background-color: #EE6E29;
    border: 2px solid #EE6E29;
  }
 
- .info-box h3 {
+ .card .info-box h3 {
    font-size: 20px;
    font-weight: bold;
    margin-bottom: 6px;
