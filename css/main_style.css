@@ -1436,7 +1436,7 @@ html {
 /* 화살표 사이즈 */
 .goodsinfo .swiper-button-next:after,
 .goodsinfo .swiper-button-prev:after {
-    font-size: 30px !important;
+    font-size: 40px !important;
     font-weight: bold;
 }
 
@@ -1472,7 +1472,7 @@ html {
     font-size: 18px;
 }
 
-.tab-item a {
+.tab-item{
     display: block;
     border-radius: 30px;
     border: 1px solid #EE6E29;
@@ -1487,20 +1487,20 @@ html {
     background-size: 50px;
 }
 
-.tab-item:nth-child(1) a {
+.reviewtab li:nth-child(1) a {
     background-image: url(../images/main/8-review/review_icon1_orange.png);
 }
 
-.tab-item:nth-child(2) a {
+.reviewtab li:nth-child(2) a {
     background-image: url(../images/main/8-review/review_icon2_orange.png);
 }
 
-.tab-item:nth-child(3) a {
+.reviewtab li:nth-child(3) a {
     background-image: url(../images/main/8-review/review_icon3_orange.png);
 }
 
 /* 활성화 탭 */
-.tab-item.active a {
+.tab-item.active{
     background-color: #EE6E29;
     color: #fff;
 }
@@ -1509,15 +1509,15 @@ html {
     color: #fff;
 }
 
-.tab-item:nth-child(1).active a {
+.reviewtab li:nth-child(1) a.active {
     background-image: url(../images/main/8-review/review_icon1_white.png);
 }
 
-.tab-item:nth-child(2).active a {
+.reviewtab li:nth-child(2) a.active{
     background-image: url(../images/main/8-review/review_icon2_white.png);
 }
 
-.tab-item:nth-child(3).active a {
+.reviewtab li:nth-child(3) a.active {
     background-image: url(../images/main/8-review/review_icon3_white.png);
 }
 
