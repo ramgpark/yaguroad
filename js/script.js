@@ -9,8 +9,7 @@
  * 6. Section4 - Archive
  * 7. Section5 - Goods
  * 8. Section6 - Review
- * 9. Section7 - CTA
- * 10. Top Button
+ * 9. Top Button
  */
 
 $(document).ready(function () {
@@ -404,61 +403,41 @@ $(document).ready(function () {
 
     /* Section 5 - Goods -------------------------------------------- */
     // 굿즈 Swiper 슬라이드
-    var goodsSwiper = new Swiper('.goodsinfo', {
-        initialSlide: 1,
-        slidesPerView: 3,
-        centeredSlides: true,
-        spaceBetween: 20,
-        loop: true,
-        loopAdditionalSlides: 4,
-        slideToClickedSlide: true,
-        observer: true,
-        observeParents: true,
+    // 1. 모든 굿즈 스와이퍼를 담을 배열 선언
+    let goodsSwipers = [];
 
-        pagination: {
-            el: '.goodsinfo .swiper-pagination',
-            clickable: true,
-        },
+    // 2. 각 .goodsinfo 마다 개별적으로 Swiper 설정
+    $('.goodsinfo').each(function (index, element) {
+        const $this = $(element);
 
-        navigation: {
-            nextEl: '.goodsinfo .swiper-button-next',
-            prevEl: '.goodsinfo .swiper-button-prev',
-        },
-
-        on: {
-            init: function () {
-                AOS.refresh();
-            },
-        }
-    });
-
-    // 굿즈 탭 클릭 이벤트
-    const swiperInstances = {};
-
-    function createSwiper(id, el) {
-        swiperInstances[id] = new Swiper(el, {
+        // 개별 인스턴스를 생성하여 배열에 저장
+        const swiper = new Swiper(element, {
             slidesPerView: 3,
-            centeredSlides: true,
+            spaceBetween: 20,
             loop: true,
+            speed: 500,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
             observer: true,
             observeParents: true,
-            navigation: {
-                nextEl: $(el).siblings('.swiper-button-next')[0],
-                prevEl: $(el).siblings('.swiper-button-prev')[0],
-            },
+
+            // 핵심: 현재 요소($this) 내부의 클래스만 찾도록 지정
             pagination: {
-                el: $(el).siblings('.swiper-pagination')[0],
+                el: $this.find('.swiper-pagination')[0],
                 clickable: true,
-            }
+            },
+            navigation: {
+                nextEl: $this.find('.swiper-button-next')[0],
+                prevEl: $this.find('.swiper-button-prev')[0],
+            },
         });
-    }
 
-    // 각 탭별 Swiper 생
-    createSwiper('fashion', '.fashion-swiper');
-    createSwiper('record', '.record-swiper');
-    createSwiper('collect', '.collect-swiper');
+        goodsSwipers.push(swiper);
+    });
 
-    // 굿즈 탭 클릭 이벤트
+    // 3. 굿즈 탭 클릭 이벤트 (기존 코드 유지 및 보완)
     $(".goodstab li a").click(function (e) {
         e.preventDefault();
 
@@ -466,23 +445,31 @@ $(document).ready(function () {
         $(this).addClass("active");
 
         const targetTab = $(this).data("tab");
-        
-        $(".goodsinfo").hide().removeClass("active");
-        $("#" + targetTab).show().addClass("active"); 
 
-        const activeSwiper = swiperInstances[targetTab];
-        if (activeSwiper) {
-            setTimeout(function() {
-                activeSwiper.update();
-                activeSwiper.loopFix();
-                activeSwiper.slideToLoop(0, 0);
-            }, 10);
+        $(".goodsinfo").hide().removeClass("active");
+        $("#" + targetTab).show().addClass("active");
+
+        // 활성화된 탭의 스와이퍼만 업데이트 및 재생
+        if (goodsSwipers.length > 0) {
+            goodsSwipers.forEach(s => {
+                if ($(s.el).is(':visible')) {
+                    setTimeout(() => {
+                        s.update();
+                        s.slideToLoop(0, 0);
+                        s.autoplay.start();
+                    }, 50); // 인식 시간을 위해 조금 더 여유를 줌
+                } else {
+                    s.autoplay.stop();
+                }
+            });
         }
 
         AOS.refresh();
     });
 
+    // 초기 실행
     $(".goodstab li:first-child a").trigger("click");
+
 
 
     /* Section 6 - Community -------------------------------------------- */
