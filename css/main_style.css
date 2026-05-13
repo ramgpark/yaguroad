@@ -1439,33 +1439,6 @@ html {
 }
 
 
-
-/* 텍스트 flow */
-#flow {
-    height: 60px;
-    margin: 0 auto;
-    background-color: #2B4A8F;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#flow .swiper-wrapper {
-    transition-timing-function: linear;
-}
-
-#flow .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#flow .swiper-slide img {    
-    display: block;
-    width: 100%;
-}
   
 
 
@@ -1654,39 +1627,43 @@ html {
 
 
 
-/* --------------------- Logo Slide --------------------- */
-#logoslide {
+/* --------------------- Logo Flow --------------------- */
+#logoflow {
     border-top: 1px solid #cccbcb;
-}
-
-#logoslide .inner {
-    margin: 10px auto;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-#logoslide .swiper-slide {
-    width: 60px;
-    height: 60px;
+    height: 100px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
 }
 
-#logoslide .swiper-slide img {
+#logoflow .swiper-wrapper {
+    transition-timing-function: linear;
+}
+
+#logoflow .swiper-slide {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    
+    transform: scale(0.8);
+    filter: grayscale(1);
+    transition: all 0.5s;
+}
+
+#logoflow .swiper-slide img {   
     display: block;
-    width: 100%;
+    height: 100%;
     object-fit: cover;
-    filter: grayscale(100%) opacity(0.8);
-    transition: all 0.5s ease;
-    transform: scale(0.9);
 }
 
-#logoslide .swiper-slide img:hover {
-    filter: grayscale(0%) opacity(1);
-    transform: scale(1.1) translateY(-5px);
+#logoflow .swiper-slide:hover{
+    transform: scale(1);
+    filter: grayscale(0);
 }
-
 
 /* --------------------- Footer --------------------- */
 #footer {
