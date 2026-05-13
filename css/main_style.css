@@ -1440,6 +1440,35 @@ html {
 
 
 
+/* 텍스트 flow */
+#flow {
+    height: 60px;
+    margin: 0 auto;
+    background-color: #2B4A8F;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#flow .swiper-wrapper {
+    transition-timing-function: linear;
+}
+
+#flow .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#flow .swiper-slide img {    
+    display: block;
+    width: 100%;
+}
+  
+
+
 /*--------------------- Section 6 - Review ---------------------  */
 .reviewinfo {
     display: flex;
