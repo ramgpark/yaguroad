@@ -273,7 +273,6 @@ $(document).ready(function () {
     });
 
 
-
     /* Section 3 - CITY TRAVEL -------------------------------------------- */
     // 도시별 데이터 정의
     const cityData = {
@@ -513,19 +512,18 @@ $(document).ready(function () {
 
 
 
-    /* 구단 로고 Swiper 슬라이드 ------------------------------- */
-    var swiper = new Swiper(".logoslide", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        centeredSlides: true,
+    /* 구단 로고 flow Swiper 슬라이드 ------------------------------- */
+    var swiper = new Swiper(".yaguloadslide", {
+        slidesPerView: 12,
+        spaceBetween: 20,
+        centeredSlides: false,
         loop: true,
         autoplay: {
             delay: 0,
             disableOnInteraction: false,
         },
-        speed: 6000,
+        speed: 5000,
     });
-
 
     /* Top Button ------------------------------- */
     const $topBtn = $('#TopBtn');
