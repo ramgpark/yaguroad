@@ -281,6 +281,7 @@
    width: 1320px;
    margin: 50px auto;
    display: flex;
+   padding-top: 30px;
  }
 
  .titlebox {
@@ -290,7 +291,11 @@
  .titlebox .title {
    font-size: 30px;
    font-weight: 700;
+   display: inline-block;
+   position: relative;
+   z-index: 1;
  }
+
 
  .titlebox .sub_text {
    font-weight: 500;
@@ -318,8 +323,8 @@
    object-fit: contain;
 
    position: absolute;
-   top: -5%;
-   left: -20%;
+   top: 0;
+   left: -15%;
  }
 
  .map-pin {
@@ -345,52 +350,52 @@
 
  /* 핀 위치 */
  .pin-place1 {
-   top: 55%;
-   left: 19%;
+   top: 48%;
+   left: 21%;
  }
 
  .pin-place2 {
-   top: 65%;
-   left: 13%;
+   top: 59%;
+   left: 15%;
  }
 
  .pin-place3 {
-   top: 72%;
-   left: 8%;
- }
-
- .pin-place4 {
-   top: 82%;
+   top: 67%;
    left: 10%;
  }
 
+ .pin-place4 {
+   top: 75%;
+   left: 11%;
+ }
+
  .pin-place5 {
-   top: 96%;
-   left: 1%;
+   top: 87%;
+   left: 3%;
  }
 
  .pin-place6 {
-   top: 94%;
-   left: 16%;
+   top: 84%;
+   left: 20%;
  }
 
  .pin-place7 {
-   top: 73%;
+   top: 65%;
    left: 27%;
  }
 
  .pin-place8 {
-   top: 64%;
-   left: 32%;
+   top: 58%;
+   left: 35%;
  }
 
  .pin-place9 {
-   top: 53%;
-   left: 41%;
+   top: 51%;
+   left: 43%;
  }
 
  .pin-place10 {
-   top: 45%;
+   top: 41%;
    left: 41%;
  }
 
@@ -401,8 +406,8 @@
    height: 480px;
    flex-shrink: 0;
    background: #fff;
-   border: 4px solid #2b4a8f;
-   margin-top: 240px;
+   border: 3px solid #2b4a8f;
+   margin-top: 220px;
    overflow: hidden;
  }
 
@@ -411,6 +416,10 @@
    height: 100%;
    padding: 30px;
    box-sizing: border-box;
+
+
+   transform: translateY(0);
+   transition: all 0.4s ease;
  }
 
  .place-card .img-box {
@@ -444,15 +453,60 @@
 
  .place_location {
    font-size: 15px;
-   font-weight: 600;
-   background: url(../images/main/4-stadium/mappin.svg) no-repeat left/contain;
-   padding-left: 18px;
+   font-weight: 500;
+   color: #595858;
+ }
+
+ .place_location::before {
+   display: inline-block;
+   content: "";
+   width: 10px;
+   height: 2px;
+   border-radius: 50%;
+   background-color: #aaa8a8;
+   margin: 4px 10px 4px 0;
  }
 
  .place_desc {
    margin-top: 10px;
    font-size: 15px;
    line-height: 1.8;
+ }
+
+ .btn-wrap {
+   margin-top: 10px;
+   opacity: 0;
+   transition: all 0.4s ease;
+ }
+
+ .place-card:hover .btn-wrap {
+   opacity: 1;
+ }
+
+ .place-card:hover {
+   transform: translateY(-30px);
+ }
+
+ .btn-detail {
+   background-color: #2b4a8f;
+   color: #fff;
+   padding: 10px 20px;
+   font-size: 15px;
+   font-weight: 500;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: background 0.3s ease;
+ }
+
+
+ .btn-detail:hover {
+   background-color: #1e3569;
+ }
+
+ .btn-detail i {
+   font-size: 12px;
+   padding: 1px 10px;
  }
 
  /* 추천 코스 */
@@ -467,7 +521,7 @@
    align-items: center;
    gap: 30px;
 
-   padding: 120px 0 80px;
+   padding: 100px 0 80px;
    margin-top: -90px;
 
  }
@@ -508,8 +562,15 @@
  }
 
  .day_text {
-   font-size: 18px;
+   width: 60px;
+   display: inline-block;
+   font-size: 17px;
    font-weight: 700;
+   background-color: #EE6E29;
+   color: #fff;
+   border-radius: 3px;
+   padding: 5px 0;
+   text-align: center;
  }
 
  .path_list {
@@ -524,8 +585,9 @@
  /* 가로 연결 선 */
  .path_list::before {
    content: '';
+   height: 5px;
    background-color: #e0e0e0;
-   height: 3px;
+   border-radius: 10px;
    position: absolute;
    top: 10px;
    left: 0;
@@ -541,8 +603,9 @@
  /* 채워지는 선 효과 */
  .path_list_fill {
    width: 0;
-   height: 3px;
+   height: 5px;
    background-color: #2b4a8f;
+   border-radius: 10px;
    position: absolute;
    top: 10px;
    left: 0;
@@ -588,6 +651,14 @@
  /* 야구장 강조 */
  .path_item.highlight .dot {
    border-color: #EE6E29;
+   display: none;
+ }
+
+ .path_item.highlight .pin {
+   width: 30px;
+   height: 30px;
+   background: url(../images/main/4-stadium/mappin.svg) no-repeat center/contain;
+   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
  }
 
  .path_item.highlight .place_text {
@@ -596,7 +667,8 @@
    font-size: 18px;
  }
 
- .path_item:hover .dot {
+ .path_item:hover .dot,
+ .path_item:hover .pin {
    transform: scale(1.3);
  }
 
