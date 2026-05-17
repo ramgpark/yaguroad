@@ -16,29 +16,74 @@ $(document).ready(function () {
 
     /* Header ----------------------------------------------------------- */
     //GNB 제어
-    const currentPath = window.location.pathname;
+    let lastScrollTop = 0;
+    const delta = 5;
+    const $header = $("#header");
+    const headerHeight = $header.outerHeight() || 90;
 
-    // 현재 페이지 활성화
+    let isAnimating = false;
+
+    // 현재 페이지 메뉴 활성화 ---
+    const currentPath = window.location.pathname;
     $(".gnb a").each(function () {
         const href = $(this).attr("href");
-        if (currentPath.indexOf(href) !== -1 && href !== "#") {
-            $(this).addClass("active");
+        if (href && href !== "#") {
+            if (currentPath === href || currentPath.endsWith(href)) {
+                $(this).addClass("active");
+            }
         }
     });
 
+    // GNB 클릭 이벤트 (메뉴 활성화 및 부드러운 스크롤) ---
     $(".gnb li a").click(function (e) {
-        // active 클래스 변경
-        $(".gnb li a").removeClass("active");
-        $(this).addClass("active");
-
-        // 내부 해시 링크 이동
         if (this.hash !== "") {
             e.preventDefault();
+
+            $(".gnb li a").removeClass("active");
+            $(this).addClass("active");
+
             const hash = this.hash;
-            $('html, body').stop().animate({
-                scrollTop: $(hash).offset().top - 90
-            }, 800);
+            const $target = $(hash);
+
+            if ($target.length) {
+                isAnimating = true;
+
+                $("html, body").stop().animate({
+                    scrollTop: $target.offset().top
+                }, 800, function () {
+
+                    if ($target.offset().top > headerHeight) {
+                        $header.addClass("hide");
+                    } else {
+                        $header.removeClass("hide");
+                    }
+
+                    lastScrollTop = $(window).scrollTop();
+
+                    setTimeout(function () {
+                        isAnimating = false;
+                    }, 300);
+                });
+            }
         }
+    });
+
+    // --- 3. 스크롤 방향 감지 기능 추가 ---
+    $(window).on("scroll", function () {
+        if (isAnimating) return;
+
+        let scrollTop = $(this).scrollTop();
+
+        if (scrollTop < 0) scrollTop = 0;
+        if (Math.abs(lastScrollTop - scrollTop) <= delta) return;
+
+        if (scrollTop > lastScrollTop && scrollTop > headerHeight) {
+            $header.addClass("hide");
+        } else if (scrollTop < lastScrollTop) {
+            $header.removeClass("hide");
+        }
+
+        lastScrollTop = scrollTop;
     });
 
 
