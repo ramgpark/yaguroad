@@ -10,7 +10,7 @@
   <!-- 웹폰트 연결 -->
   <link rel="stylesheet" as="style" crossorigin
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="css/isamanru.css">
+  <link rel="stylesheet" href="css/font.css">
 
   <!-- aos 연결 -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -40,9 +40,9 @@
         <ul class="gnb">
           <li><a href="brand.html">BRAND</a></li>
           <li><a href="travel.html" class="active">TRAVEL</a></li>
-          <li><a href="archive.html">ARCHIVE</a></li>
+          <li><a href="index.html">ARCHIVE</a></li>
           <li><a href="shop.html">SHOP</a></li>
-          <li><a href="community.html">COMMUNITY</a></li>
+          <li><a href="index.html">COMMUNITY</a></li>
         </ul>
 
         <ul class="util">
@@ -58,7 +58,7 @@
 
     <!-- banner 시작 -->
     <div id="banner">
-      <div class="text">
+      <div class="text" >
         <h1>야구장을 따라 즐기는 도시 여행</h1>
         <p>직관의 하루를 하나의 여행으로 만들어보세요</p>
       </div>
@@ -70,7 +70,7 @@
     <div id="section1">
       <p class="guide_text">
         "도시를 선택해 보세요. 당신을 기다리는 현지의 특별한 맛이 펼쳐집니다."</p>
-      <ul class="city_filter">
+      <ul class="city_filter" class="titlebox" data-aos="fade-down" data-aos-duration="2000">
         <li class="city_item active">
           <button type="button">
             <span class="city_img">
@@ -150,7 +150,7 @@
     <!-- section2: 여행코스 -->
     <div id="section2">
       <div class="section">
-        <div class="titlebox" data-aos="fade-down" data-aos-duration="1000">
+        <div class="titlebox" data-aos="fade-down" data-aos-duration="2000">
           <p class="title">추천 여행 코스</p>
           <p class="sub_text">야구여행 준비에 딱! <br> 인기 여행지를 확인해보세요</p>
         </div>
@@ -171,7 +171,7 @@
             <button class="map-pin pin-place10" data-place="9">해동 용궁사</button>
           </div>
 
-          <div class="swiper placebox">
+          <div class="swiper placebox" data-aos="fade-up" data-aos-duration="2000">
             <div class="swiper-wrapper place-list">
               <!-- 슬라이드 01: 사직야구장 -->
               <div class="swiper-slide place-card">
@@ -357,23 +357,43 @@
           <div class="course_path_wrap">
             <div class="course_path">
               <ul class="path_list">
+                <div class="go_badge">GO!</div>
                 <div class="path_list_fill"></div>
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">부산역</span>
                 </li>
+
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-bus"></i> 40분</span>
+                </div>
+
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">광안리해수욕장</span>
                 </li>
+
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-person-walking"></i> 2분</span>
+                </div>
+
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">수변최고돼지국밥</span>
                 </li>
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-car"></i> 30분</span>
+                </div>
+
                 <li class="path_item highlight">
                   <div class="pin"></div>
                   <span class="place_text">사직야구장</span>
                 </li>
+
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-subway"></i> 36분</span>
+                </div>
+
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">부산역</span>
@@ -392,23 +412,36 @@
             <div class="course_path">
               <span class="day_text">1Day</span>
               <ul class="path_list">
+                <div class="go_badge">GO!</div>
                 <div class="path_list_fill"></div>
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">부산역</span>
                 </li>
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-bus"></i> 25분</span>
+                </div>
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">흰여울문화마을</span>
                 </li>
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-bus"></i> 19분</span>
+                </div>
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">자갈치시장</span>
                 </li>
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-subway"></i> 50분</span>
+                </div>
                 <li class="path_item highlight">
                   <div class="pin"></div>
                   <span class="place_text">사직야구장</span>
                 </li>
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-car"></i> 30분</span>
+                </div>
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">광안리 숙소</span>
@@ -420,19 +453,44 @@
             <div class="course_path">
               <span class="day_text">2Day</span>
               <ul class="path_list">
+                <div class="go_badge">GO!</div>
                 <div class="path_list_fill"></div>
+                <li class="path_item">
+                  <div class="dot"></div>
+                  <span class="place_text">광안리 숙소</span>
+                </li>
+
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-person-walking"></i> 5분</span>
+                </div>
+
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">광안리 해수욕장</span>
                 </li>
+
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-bus"></i> 46분</span>
+                </div>
+
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">해운대 블루라인파크</span>
                 </li>
+
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-person-walking"></i> 1분</span>
+                </div>
+
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">청사포</span>
                 </li>
+
+                <div style="position:relative; flex:1;">
+                  <span class="time_info"><i class="fa-solid fa-bus"></i> 1시간</span>
+                </div>
+
                 <li class="path_item">
                   <div class="dot"></div>
                   <span class="place_text">부산역</span>
@@ -478,11 +536,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -511,11 +569,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -544,11 +602,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -577,16 +635,17 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
             </div>
             <!-- 카드 4 -->
+
 
 
             <!-- 카드 1 -->
@@ -610,11 +669,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -643,11 +702,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -676,11 +735,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -709,11 +768,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -754,11 +813,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -787,11 +846,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -820,11 +879,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -852,17 +911,18 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
             </div>
             <!-- 카드 4 -->
 
+            
             <!-- 카드 1 -->
             <div class="swiper-slide card">
               <!-- 1. 이미지 박스 -->
@@ -884,11 +944,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -917,11 +977,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -950,11 +1010,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -982,11 +1042,11 @@
                 <div class="action-area">
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/placeholder.png" alt="지도" class="icon-img default">
-                    <img src="./images/travel/icon/placeholder_orange.png" alt="지도" class="icon-img hover">
+                    <img src="./images/travel/icon/placeholder_blue.png" alt="지도" class="icon-img hover">
                   </div>
                   <div class="icon-wrap">
                     <img src="./images/travel/icon/phone-call.png" alt="전화" class="icon-img default">
-                    <img src="./images/travel/icon/phone-call_orange.png" alt="전화" class="icon-img hover">
+                    <img src="./images/travel/icon/phone-call_blue.png" alt="전화" class="icon-img hover">
                   </div>
                 </div>
               </div>
@@ -1045,6 +1105,7 @@
     </button>
 
 
+    ---------------------------------------------------------------
     <!-- jQuery 오픈소스 -->
     <script src="./js/jquery-4.0.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
