@@ -36,7 +36,12 @@ $(document).ready(function () {
 
     // GNB 클릭 이벤트 (메뉴 활성화 및 부드러운 스크롤) ---
     $(".gnb li a").click(function (e) {
-        if (this.hash !== "") {
+
+        const url = new URL(this.href);
+        const isSamePage = url.pathname === location.pathname;
+
+        // 같은 페이지일 때만 스크롤 제어
+        if (this.hash !== "" && isSamePage) {
             e.preventDefault();
 
             $(".gnb li a").removeClass("active");
@@ -66,6 +71,8 @@ $(document).ready(function () {
                 });
             }
         }
+
+        // 다른 페이지(index.html 등)는 그냥 이동 (막지 않음)
     });
 
     // --- 3. 스크롤 방향 감지 기능 추가 ---
