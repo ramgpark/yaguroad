@@ -55,42 +55,23 @@ $(document).ready(function () {
 
                 $("html, body").stop().animate({
                     scrollTop: $target.offset().top
-                }, 800, function () {
-
-                    if ($target.offset().top > headerHeight) {
-                        $header.addClass("hide");
-                    } else {
-                        $header.removeClass("hide");
-                    }
-
-                    lastScrollTop = $(window).scrollTop();
-
-                    setTimeout(function () {
-                        isAnimating = false;
-                    }, 300);
-                });
+                }, 800,);
             }
         }
 
         // 다른 페이지(index.html 등)는 그냥 이동 (막지 않음)
     });
 
-    // --- 3. 스크롤 방향 감지 기능 추가 ---
+    // --- 스크롤 이벤트 ---
     $(window).on("scroll", function () {
-        if (isAnimating) return;
-
         let scrollTop = $(this).scrollTop();
 
-        if (scrollTop < 0) scrollTop = 0;
-        if (Math.abs(lastScrollTop - scrollTop) <= delta) return;
-
-        if (scrollTop > lastScrollTop && scrollTop > headerHeight) {
-            $header.addClass("hide");
-        } else if (scrollTop < lastScrollTop) {
-            $header.removeClass("hide");
+        // 스크롤이 조금이라도 내려가면 active 클래스 추가
+        if (scrollTop > 0) {
+            $header.addClass("active");
+        } else {
+            $header.removeClass("active");
         }
-
-        lastScrollTop = scrollTop;
     });
 
 
