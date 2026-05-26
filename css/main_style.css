@@ -185,113 +185,6 @@ html {
     object-fit: cover;
 }
 
-.banner {
-    margin-top: 90px;
-    width: 300%;
-    display: flex;
-}
-
-.slide {
-    width: 100vw;
-    /* 화면 전체 너비 고정 */
-    height: 900px;
-    flex-shrink: 0;
-    /* 크기가 줄어들지 않도록 방지 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    filter: grayscale(1);
-}
-
-/* 슬라이드별 배경 */
-.slide1 {
-    background-image: url('../images/main/2-visual/banner01.png');
-}
-
-.slide2 {
-    background-image: url('../images/main/2-visual/banner02.png');
-}
-
-.slide3 {
-    background-image: url('../images/main/2-visual/banner03.png');
-}
-
-
-.typing1 {
-    display: inline-block;
-    font-size: 60px;
-    font-weight: bold;
-    color: #ffffff;
-
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    z-index: 99;
-}
-
-.typing2 {
-    display: inline-block;
-    font-size: 50px;
-    font-weight: bold;
-    color: #ffffff;
-
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    z-index: 99;
-}
-
-/* 커서 공통 스타일 */
-.cursor::after {
-    content: '';
-    display: inline-block;
-    width: 2px;
-    height: 0.8em;
-    background-color: white;
-    margin-left: 5px;
-    animation: blink 0.7s infinite;
-    vertical-align: middle;
-}
-
-@keyframes blink {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-/* 줄 높이 고정 (지워졌을 때 덜컹거림 방지) */
-.typing1,
-.typing2 {
-    min-height: 1.2em;
-}
-
-
-#visual span {
-    /* 불투명박스 */
-    width: 100%;
-    height: 840px;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin-top: 90px;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-}
 
 
 /* --------------------Section------------------------ */
@@ -336,7 +229,7 @@ html {
 
 
 /* 섹션별 꾸미기 */
-/* section 1 - About */
+/* section 1 - Brand Intro */
 #section1 {
     height: 900px;
 }
@@ -352,26 +245,26 @@ html {
     text-align: left;
 }
 
-#section1 p{
+#section1 .contentsbox{
+    display: flex;
+    gap: 200px;
+}
+
+#section1 .imgbox img{
+    width: 550px;
+    height: 350px;
+    border-radius: 40px;
+}
+
+#section1 .textbox p{
     font-size: 20px;
 }
 
-.about_img img{
-    width: 550px;
-}
-
-.about_img.img1 {
+#section1 .character{
     position: absolute;
-    top: 480px;
-    right: 180px;
+    top: 700px;
+    right: 190px;
 }
-
-.about_img.img2 {
-    position: absolute;
-    top: 208px;
-    right: -30px;
-}
-
 
 
 /* Section 2 - Stadium */
